@@ -1,24 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <a href='https://discordapp.com/api/oauth2/authorize?client_id=706669135915909140&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=identify'>
+      <button>click</button>
+      </a>
     </div>
   );
 }
