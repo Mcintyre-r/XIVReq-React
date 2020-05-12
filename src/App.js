@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import './App.css';
+import Axios from 'axios'
+import {Cookies} from 'react-cookie';
 
 function App() {
+ 
+  const getReq = () => {
+    Axios.get('http://localhost:5000/api/requests')
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log("err:", err)
+    })
+  }
+  useEffect(()=>{
+    const loggedin = Cookies.get('discordOauth')
+    
+    if(loggedin){
+      getReq()
+    }
+    
+  }, [])
   return (
     <div>
-      <a href='https://discordapp.com/api/oauth2/authorize?client_id=706669135915909140&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=identify'>
+      <a href='http://localhost:5000/api/auth'>
       <button>click</button>
       </a>
     </div>
