@@ -1,23 +1,31 @@
 $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
 
 
 
 #{$a-tags} {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: bold; 
     color:#ffefff;
-    transition: all .2s ease-in;
+    // transition: all .2s ease-in;
   }
 #{$a-tags-hover} {
-    color: #d4c9ff;
-    text-shadow:0px 0px 30px #47c1fa;
-    font-size: 1.1rem;
+    color: rgb(100,220,220);
+    text-shadow:0px 0px 30px rgb(100,220,220);
+    // font-size: 1.1rem;
   }
+
+
+$light-blue: #A5E5D4;
+$blue: #42C3C8;
+$pink: #D93DA5;
+$black: #1D1E22;
 
 
 .nav {
@@ -26,6 +34,7 @@ $a-tags-hover: 'a:active, a:hover';
     right:10%;
     display: flex;
     justify-content: flex-end;
+    z-index: 99;
 }
 .link {
     background-image: url("./Assets/NavTest.png");
@@ -36,6 +45,30 @@ $a-tags-hover: 'a:active, a:hover';
     align-items: center;
 }
 
+.wrapper {
+    width:40%;
+    // background: rgba(0,0,0,0.5);
+    margin: 0 30%;
+}
+
+h1, h6 {
+	padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+    font-family: 'M PLUS 1p', sans-serif;
+    
+
+}
+h1 {
+    margin-top: 20%;
+}
+
+.sub {
+	color: rgb(100,220,220);
+	letter-spacing: .5em;
+}
 
 
 
@@ -59,7 +92,6 @@ $a-tags-hover: 'a:active, a:hover';
         width: 100%;
         height: 100%;
         z-index: 1;
-        // background: rgba(0,0,0,0.15)
     }
 }
 .video-foreground,
@@ -76,5 +108,83 @@ $a-tags-hover: 'a:active, a:hover';
     .video-foreground { height: 300%; top: -100%; }
 }
 @media (max-aspect-ratio: 16/9) {
-    .video-foreground { width: 300%; left: -100%; }
+    .video-foreground { width: 320%; left: -100%; }
+    .wrapper {margin: 0; width: 100%;}
+}
+
+
+
+
+
+.text {
+	position: relative;
+	padding: 30px;
+	font-size: 35px;
+	color: $light-blue;
+
+	// +font-family;
+	// +text-shadow($light-blue)
+
+	&::after, &::before {
+		content: attr(data-decrypted-text);
+		position: absolute;
+		opacity: 0;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		padding: 30px;
+		overflow: hidden;
+		color: $blue;
+    }
+	&::before {
+		z-index: -1;
+		color: $pink;
+    }
+	&.glitch-writing {
+		animation: glitch-skew 1s steps(10, end) infinite alternate-reverse;
+
+		&::after, &::before{
+            opacity: 1;
+        }
+
+		&::after {
+			animation: glitch-animation-1 1.5s steps(20, end) infinite alternate-reverse;
+        }
+		&::before {
+            animation: glitch-animation-2 2s steps(20, end) infinite alternate-reverse;
+        }
+    }
+	@keyframes glitch-skew {
+		$steps: 10;
+
+		@for $i from 0 through $steps {
+			#{percentage($i * 1 / $steps)} {
+                transform: skew(random(10) - 5 + deg)
+            }
+            
+        }
+    }
+
+	@keyframes glitch-animation-1{
+		$steps: 20;
+
+		@for $i from 0 through $steps{
+			#{percentage($i * 1 / $steps)} {
+				clip: rect(random(100) + px, 1000px, random(100) + px, 0);
+                transform: skew(random(16) - 8 + deg) translatex(random(30) - 15 + px);
+            }
+        }
+    }
+
+	@keyframes glitch-animation-2 {
+		$steps: 20;
+
+		@for $i from 0 through $steps{
+			#{percentage($i * 1 / $steps)}{
+				clip: rect(random(100) + px, 1000px, random(100) + px, 0);
+                transform: skew(random(10) - 5 + deg) translatex(random(20) - 10 + px);
+            }
+        }
+    }
 }
