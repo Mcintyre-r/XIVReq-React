@@ -23,7 +23,7 @@ $a-tags-hover: 'a:active, a:hover';
 
 
 $light-blue: #A5E5D4;
-$blue: #42C3C8;
+$blue: white;
 $pink: #D93DA5;
 $black: #1D1E22;
 
@@ -66,7 +66,7 @@ h1 {
 }
 
 .sub {
-	color: rgb(100,220,220);
+	color: white;
 	letter-spacing: .5em;
 }
 
@@ -76,7 +76,7 @@ h1 {
 
 
 .video-background {
-    // background: #000;
+    background: #000;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -112,15 +112,42 @@ h1 {
     .wrapper {margin: 0; width: 100%;}
 }
 
-
+#crystals {
+    position:absolute;
+    top:0;
+    left:0;
+    width:480px;
+    height:100%;
+    background:transparent;
+}
+.crystal_01 {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_01.png)repeat-y;
+}
+.crystal_02 {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_02.png)repeat-y;
+}
+.crystal_03 {
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:50%;
+    margin-left:-180px;
+        background:url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_03.png)repeat-y;
+}
 
 
 
 .text {
 	position: relative;
 	padding: 30px;
-	font-size: 35px;
-	color: $light-blue;
+	font-size: 20px;
+	color: white;
 
 	// +font-family;
 	// +text-shadow($light-blue)
