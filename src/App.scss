@@ -46,33 +46,28 @@ $black: #1D1E22;
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
     width:40%;
     // background: rgba(0,0,0,0.5);
-    margin: 0 30%;
+    margin: 20% 30% 0 5%;
 }
 
 h1, h6 {
 	padding: 0;
     margin: 0;
-    text-align: center;
+    text-align: left;
     font-size: 5rem;
-    color: white;
+    color: black;
     font-family: 'M PLUS 1p', sans-serif;
-    
+}
 
-}
-h1 {
-    margin-top: 20%;
-}
 
 .sub {
-	color: white;
+	color: black;
 	letter-spacing: .5em;
 }
-
-
-
-
 
 
 .video-background {
@@ -94,6 +89,7 @@ h1 {
         z-index: 1;
     }
 }
+
 .video-foreground,
 .video-background iframe {
     position: absolute;
@@ -141,13 +137,22 @@ h1 {
         background:url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_03.png)repeat-y;
 }
 
-
+.shape{
+    z-index: -1;
+    position:absolute;
+    top:0;
+    left:-20%;
+    width: 50%;
+    height: 100%;
+    transform:skew(-20deg);
+    background: rgba(255, 255, 255, 0.5)
+}
 
 .text {
 	position: relative;
-	padding: 30px;
+	padding-left: 30px;
 	font-size: 20px;
-	color: white;
+	color: black;
 
 	// +font-family;
 	// +text-shadow($light-blue)
@@ -160,12 +165,12 @@ h1 {
 		top: 0;
 		width: 100%;
 		height: 100%;
-		padding: 30px;
+		padding-left: 30px;
 		overflow: hidden;
 		color: $blue;
     }
 	&::before {
-		z-index: -1;
+		z-index: -2;
 		color: $pink;
     }
 	&.glitch-writing {

@@ -47,12 +47,12 @@ import YouTube from 'react-youtube';
     const crystal_03 = React.createRef()
 
     const testWriter = async (element) => {
-      const displayWriter = setGlitchedWriter(element, {preset: 'nier'})
+      const displayWriter = setGlitchedWriter(element, {})
       let index = 0
       const messages = ["A FFXIV work order system", "Login via discord to continue"]
       while(0 != 1){
         await wait(18000)
-        displayWriter.write(messages[index], {preset: 'nier'})
+        displayWriter.write(messages[index], {})
         index++
         if(index === messages.length){
           index = 0
@@ -68,7 +68,6 @@ import YouTube from 'react-youtube';
       var posY1 = 0;
       var posY2 = 0;
       var posY3 = 0;
-      var imgH = 500;
       setInterval( function(){
         if (posY1 <= -900) posY1 = 0;
         if (posY2 <= -900) posY2 = 0;
@@ -76,15 +75,10 @@ import YouTube from 'react-youtube';
         posY1 -= 1;
         posY2 -= 2;
         posY3 -= 3;
-        // await crystal_01
         crystal_01.current.style.backgroundPosition = '0' + posY1 + 'px' 
         crystal_02.current.style.backgroundPosition = '0' + posY2 + 'px'
         crystal_03.current.style.backgroundPosition = '0' + posY3 + 'px'
-        // $('.crystal_01').css({ backgroundPosition: '0' + posY1 + 'px' });
-        // $('.crystal_02').css({ backgroundPosition: '0' + posY2 + 'px' });
-        // $('.crystal_03').css({ backgroundPosition: '0' + posY3 + 'px' });
       },50);
-
     } 
     
     useEffect(() => {
@@ -108,7 +102,7 @@ import YouTube from 'react-youtube';
         <div ref={crystal_02} class="crystal_02"></div>
         <div ref={crystal_03} class="crystal_03"></div>    
       </div>
-  
+      <div className="shape"/>
       <div className="video-background">
         <div className="video-foreground">
           <YouTube
