@@ -49,7 +49,9 @@ import YouTube from 'react-youtube';
     const testWriter = async (element) => {
       const displayWriter = setGlitchedWriter(element, {})
       let index = 0
-      const messages = ["A FFXIV work order system", "Login via discord to continue"]
+      const messages = ["Login via discord to continue", "A FFXIV work order system"]
+      await wait(3000)
+      displayWriter.write("A FFXIV work order system", {})
       while(0 != 1){
         await wait(18000)
         displayWriter.write(messages[index], {})
@@ -94,7 +96,7 @@ import YouTube from 'react-youtube';
         </div>
       </nav>
       <div className="wrapper">
-        <img src={logo}/>
+        <img src={logo} className="fade_in_left"/>
         <h1 ref={glitch} className="text"></h1> 
       </div>
       <div id="crystals">

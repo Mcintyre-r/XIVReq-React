@@ -147,7 +147,7 @@ h1, h6 {
     transform:skew(-20deg);
     background: rgba(255, 255, 255, 0.5)
 }
-
+// glitch text 
 .text {
 	position: relative;
 	padding-left: 30px;
@@ -220,3 +220,38 @@ h1, h6 {
         }
     }
 }
+// glitch text end
+
+
+//image entrance
+
+.fade_in_left {
+	-webkit-animation: fade-in-left 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
+	        animation: fade-in-left 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
+}
+
+@-webkit-keyframes fade-in-left {
+    0% {
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-left {
+    0% {
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+//image entrance end
