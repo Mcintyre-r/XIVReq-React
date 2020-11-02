@@ -42,14 +42,6 @@ import YouTube from 'react-youtube';
       }
     };
 
-    
-    
-
-
-
-
-
-    
     useEffect(() => {
       testWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
@@ -67,9 +59,9 @@ import YouTube from 'react-youtube';
         <h1 ref={glitch} className="text" alt='subtitle'> </h1> 
       </div>
       <div id="crystals">
-        <div ref={crystal_01} class="crystal_01"></div>
-        <div ref={crystal_02} class="crystal_02"></div>
-        <div ref={crystal_03} class="crystal_03"></div>    
+        <div ref={crystal_01} class="crystal_01"/>
+        <div ref={crystal_02} class="crystal_02"/>
+        <div ref={crystal_03} class="crystal_03"/> 
       </div>
       <div className="shape"/>
       <div className="video-background">
