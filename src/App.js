@@ -49,11 +49,6 @@ import YouTube from 'react-youtube';
 
   return (
     <>
-      <nav className="nav">
-        <div className="link">
-          <a href="https://www.google.com">discord login</a>
-        </div>
-      </nav>
       <div className="wrapper">
         <img src={logo} className="fade_in_left" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="text" alt='subtitle'> </h1> 
