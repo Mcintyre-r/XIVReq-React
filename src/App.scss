@@ -22,7 +22,6 @@ $black: #1D1E22;
     flex-direction: column;
     justify-content: left;
     width:40%;
-    // background: rgba(0,0,0,0.5);
     margin: 20% 30% 0 5%;
 }
 
@@ -36,10 +35,6 @@ h1, h6 {
 }
 
 
-.sub {
-	color: black;
-	letter-spacing: .5em;
-}
 
 
 .video-background {
@@ -125,9 +120,6 @@ h1, h6 {
 	padding-left: 30px;
 	font-size: 20px;
 	color: black;
-
-	// +font-family;
-	// +text-shadow($light-blue)
 
 	&::after, &::before {
 		content: attr(data-decrypted-text);
