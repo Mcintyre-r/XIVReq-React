@@ -51,7 +51,7 @@ import YouTube from 'react-youtube';
     <>
       <div className="wrapper">
         <img src={logo} className="fade_in_left" alt='FFXIV REQUISITION logo'/>
-        <h1 ref={glitch} className="text" alt='subtitle'> </h1> 
+        <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
       </div>
       <div id="crystals">
         <div ref={crystal_01} class="crystal_01"/>

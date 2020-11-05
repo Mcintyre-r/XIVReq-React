@@ -11,9 +11,8 @@ $a-tags-hover: 'a:active, a:hover';
 
 
 $light-blue: #A5E5D4;
-$blue: white;
 $pink: #D93DA5;
-$black: #1D1E22;
+
 
 
 
@@ -115,7 +114,7 @@ h1, h6 {
     background: rgba(255, 255, 255, 0.5)
 }
 // glitch text 
-.text {
+.glitch {
 	position: relative;
 	padding-left: 30px;
 	font-size: 20px;
@@ -131,7 +130,7 @@ h1, h6 {
 		height: 100%;
 		padding-left: 30px;
 		overflow: hidden;
-		color: $blue;
+		color: white;
     }
 	&::before {
 		z-index: -2;
