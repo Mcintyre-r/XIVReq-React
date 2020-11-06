@@ -1,19 +1,4 @@
-$a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
-@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap');
-
-
-
-
-
-
-$light-blue: #A5E5D4;
-$pink: #D93DA5;
-
-
 
 
 .wrapper {
@@ -24,7 +9,7 @@ $pink: #D93DA5;
     margin: 20% 30% 0 5%;
 }
 
-h1, h6 {
+h1{
 	padding: 0;
     margin: 0;
     text-align: left;
@@ -134,7 +119,7 @@ h1, h6 {
     }
 	&::before {
 		z-index: -2;
-		color: $pink;
+		color: #D93DA5;
     }
 	&.glitch-writing {
 		animation: glitch-skew 1s steps(10, end) infinite alternate-reverse;
