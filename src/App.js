@@ -4,9 +4,10 @@ import './reset.scss'
 import './App.scss'
 import {scrollCrystal,testWriter} from './utility.js'
 import logo from './Assets/ffxiv_req_logo.png'
+import Youtube from './Components/backgroundVideo.js'
 
 
-import YouTube from 'react-youtube';
+
 
  function App (){
  
@@ -28,19 +29,7 @@ import YouTube from 'react-youtube';
     const crystal_01 = React.createRef()
     const crystal_02 = React.createRef()
     const crystal_03 = React.createRef()
-    const videoOptions = { 
-      playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
-        controls: 0,
-        rel: 0,
-        showinfo: 0,
-        loop: 1,
-        modestbranding: 1,
-        disablekb: 1,
-        playlist: "5jmALV5kDVw",
-        start: 4
-      }
-    };
+
 
     useEffect(() => {
       testWriter(glitch.current)
@@ -59,16 +48,7 @@ import YouTube from 'react-youtube';
         <div ref={crystal_03} class="crystal_03"/> 
       </div>
       <div className="shape"/>
-      <div className="video-background">
-        <div className="video-foreground">
-          <YouTube
-            videoId="5jmALV5kDVw"
-            opts={videoOptions}
-            className="video-iframe"
-            onReady={(event)=> event.target.mute()}
-          />
-        </div>
-      </div>
+      <Youtube />
     </>
   );
 }
