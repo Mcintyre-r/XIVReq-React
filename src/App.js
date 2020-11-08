@@ -5,25 +5,11 @@ import './App.scss'
 import {scrollCrystal,testWriter} from './utility.js'
 import logo from './Assets/ffxiv_req_logo.png'
 import Youtube from './Components/backgroundVideo.js'
-
+import Crystal from './Components/crystal.js'
 
 
 
  function App (){
- 
-  // const getReq = () => {
-  //   Axios.get('http://localhost:5000/api/requests')
-  //   .then(res => {
-  //     console.log(res)
-  //   })
-  //   .catch(err => {
-  //     console.log("err:", err)
-  //   })
-  // }
-
-  // var decodedCookie = decodeURIComponent(document.cookie);
-  // const cookies = document.cookie
-  // console.log(cookies)
 
     const glitch = React.createRef()
     const crystal_01 = React.createRef()
@@ -34,7 +20,7 @@ import Youtube from './Components/backgroundVideo.js'
     useEffect(() => {
       testWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
-    }, [])
+    })
 
   return (
     <>
@@ -42,12 +28,11 @@ import Youtube from './Components/backgroundVideo.js'
         <img src={logo} className="fade_in_left" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
       </div>
-      <div id="crystals">
-        <div ref={crystal_01} class="crystal_01"/>
-        <div ref={crystal_02} class="crystal_02"/>
-        <div ref={crystal_03} class="crystal_03"/> 
-      </div>
+
+      <Crystal crystal_01={crystal_01} crystal_02={crystal_02} crystal_03={crystal_03}/>
+
       <div className="shape"/>
+
       <Youtube />
     </>
   );

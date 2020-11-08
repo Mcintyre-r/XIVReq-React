@@ -1,4 +1,4 @@
-import {setGlitchedWriter, glitchWrite} from "glitched-writer"
+import {setGlitchedWriter} from "glitched-writer"
 
 const wait = time => new Promise(resolve => setTimeout(resolve, time))
 
