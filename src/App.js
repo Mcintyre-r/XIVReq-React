@@ -1,5 +1,4 @@
 import React, { useEffect} from 'react';
-import Axios from 'axios'
 import './reset.scss'
 import './App.scss'
 import {scrollCrystal,testWriter} from './utility.js'
@@ -29,7 +28,7 @@ import Crystal from './Components/crystal.js'
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
       </div>
 
-      <Crystal crystal_01={crystal_01} crystal_02={crystal_02} crystal_03={crystal_03}/>
+      <Crystal crystals={[crystal_01,crystal_02,crystal_03]}/>
 
       <div className="shape"/>
 
