@@ -22,7 +22,7 @@ import Crystal from './Components/crystal.js'
     })
 
   return (
-    <>
+    <div className="container">
       <div className="wrapper">
         <img src={logo} className="fade_in_left" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
@@ -30,10 +30,12 @@ import Crystal from './Components/crystal.js'
 
       <Crystal crystals={[crystal_01,crystal_02,crystal_03]}/>
 
-      <div className="shape"/>
+        <div className="shape"/>
+        <div className="otherShape"/>
+
 
       <Youtube />
-    </>
+    </div>
   );
 }
 
