@@ -67,6 +67,7 @@ h1{
     position:absolute;
     top:0;
     left:0;
+    z-index: -1;
     width:480px;
     height:100%;
     background:transparent;
@@ -92,7 +93,7 @@ h1{
         background:url(http://img.finalfantasyxiv.com/lds/promo/pc/global/images/world/what/crystal_03.png)repeat-y;
 }
 
-.shape{
+.leftShape{
     z-index: -1;
     position:absolute;
     top:0;
@@ -104,7 +105,7 @@ h1{
 }
 
 
-.otherShape{
+.rightShape{
     z-index: -1;
     position:absolute;
     top:0;
@@ -112,8 +113,20 @@ h1{
     width: 80vw;
     height: 100%;
     transform:skew(-20deg);
-    background: rgba(0, 0, 0, 0.5)
+    background: rgba(0, 0, 0, 0.5);
+    animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
 }
+
+@keyframes slide-in-right {
+    0% {
+      left: 200%;
+      opacity: 0;
+    }
+    100% {
+      left: 30%;
+      opacity: 1;
+    }
+  }
 // glitch text 
 .glitch {
 	position: relative;
@@ -219,3 +232,5 @@ h1{
     }
   }
 //image entrance end
+
+
