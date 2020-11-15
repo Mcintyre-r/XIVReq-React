@@ -9,10 +9,8 @@ import Crystal from './Components/crystal.js'
 
 
  function App (){
-   const [login, setLogin] = useState(false)
-
-
-    const glitch = React.createRef()
+    const [login, setLogin] = useState(false)
+    const glitch = useRef()
     const crystal_01 = useRef()
     const crystal_02 = useRef()
     const crystal_03 = useRef()
@@ -28,7 +26,7 @@ import Crystal from './Components/crystal.js'
       <div className="wrapper fade_in_left">
         <img src={logo} className="" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
-        <button onClick={()=> setLogin(!login)}>Log in</button>
+        <button onClick={()=> setLogin(!login)}>{login?'Log out':'Log in'}</button>
       </div>
 
       <Crystal crystals={[crystal_01,crystal_02,crystal_03]}/>

@@ -23,7 +23,23 @@ h1{
     font-family: 'M PLUS 1p', sans-serif;
 }
 
-
+button{
+    width: 100px;
+    margin-top:20px;
+    margin-left: 4.5%;
+    font-family: 'M PLUS 1p', sans-serif;
+    background-color: transparent;
+    border: solid 1px black;
+    font-weight: bold;
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
+    &:hover{
+        color:white;
+        background-color: black;
+    }
+}
 
 
 .video-background {
