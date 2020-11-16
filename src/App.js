@@ -1,7 +1,7 @@
 import React, { useEffect, useState,useRef} from 'react';
-import './reset.scss'
-import './App.scss'
-import {scrollCrystal,testWriter} from './utility.js'
+import './Scss/reset.scss'
+import './Scss/App.scss'
+import {scrollCrystal,glitchWriter} from './Utility/utility.js'
 import logo from './Assets/ffxiv_req_logo.png'
 import Youtube from './Components/backgroundVideo.js'
 import Crystal from './Components/crystal.js'
@@ -17,7 +17,7 @@ import Crystal from './Components/crystal.js'
 
 
     useEffect(() => {
-      testWriter(glitch.current)
+      glitchWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
     },[])
 
@@ -31,7 +31,6 @@ import Crystal from './Components/crystal.js'
 
       <Crystal crystals={[crystal_01,crystal_02,crystal_03]}/>
 
-      
       <div className="leftShape"/>
       {login? <div className="rightShape"/> : null}
       

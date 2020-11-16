@@ -2,7 +2,7 @@ import {setGlitchedWriter} from "glitched-writer"
 
 const wait = time => new Promise(resolve => setTimeout(resolve, time))
 
-export const testWriter = async (element) => {
+export const glitchWriter = async (element) => {
     const displayWriter = setGlitchedWriter(element, {})
     let index = 0
     const messages = ["Login via discord to continue", "A FFXIV work order system"]
