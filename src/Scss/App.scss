@@ -23,14 +23,18 @@ h1{
     font-family: 'M PLUS 1p', sans-serif;
 }
 
-button{
+.btn{
+    text-decoration: none;
+    text-align: center;
+    padding: 4px 0;
+    color: black;
     width: 100px;
     margin-top:20px;
     margin-left: 4.5%;
     font-family: 'M PLUS 1p', sans-serif;
     background-color: transparent;
     border: solid 1px black;
-    font-weight: bold;
+    // font-weight: bold;
     &:focus{
         outline: none;
         box-shadow: none;

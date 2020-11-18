@@ -1,15 +1,16 @@
 import React, { useEffect, useState,useRef} from 'react';
-import './Scss/reset.scss'
-import './Scss/App.scss'
-import {scrollCrystal,glitchWriter} from './Utility/utility.js'
-import logo from './Assets/ffxiv_req_logo.png'
-import Youtube from './Components/backgroundVideo.js'
-import Crystal from './Components/crystal.js'
+import './Scss/reset.scss';
+import './Scss/App.scss';
+import {scrollCrystal,glitchWriter} from './Utility/utility.js';
+import logo from './Assets/ffxiv_req_logo.png';
+import Youtube from './Components/backgroundVideo.js';
+import Crystal from './Components/crystal.js';
+
 
 
 
  function App (){
-    const [login, setLogin] = useState(false)
+    const [login, setLogin] = useState()
     const glitch = useRef()
     const crystal_01 = useRef()
     const crystal_02 = useRef()
@@ -26,7 +27,7 @@ import Crystal from './Components/crystal.js'
       <div className="wrapper fade_in_left">
         <img src={logo} className="" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
-        <button onClick={()=> setLogin(!login)}>{login?'Log out':'Log in'}</button>
+        <a href='localhost:5000/api/auth/' className='btn'>{login?'Log out':'Log in'}</a>
       </div>
 
       <Crystal crystals={[crystal_01,crystal_02,crystal_03]}/>
