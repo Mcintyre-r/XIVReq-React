@@ -1,4 +1,5 @@
 import {setGlitchedWriter} from "glitched-writer"
+import Axios from 'axios'
 
 const wait = time => new Promise(resolve => setTimeout(resolve, time))
 
@@ -34,3 +35,10 @@ export const scrollCrystal = (crystal_01,crystal_02,crystal_03) => {
       crystal_03.current.style.backgroundPosition = '0' + posY3 + 'px'
     },50);
   } 
+
+
+export const getRequest =  (setFunc) => {
+  Axios.get('http://localhost:5000/api/requests/').then( res => {
+    setFunc(res.data.Requests)
+  })
+}
