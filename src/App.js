@@ -5,19 +5,22 @@ import {scrollCrystal,glitchWriter, getRequest} from './Utility/utility.js';
 import logo from './Assets/ffxiv_req_logo.png';
 import Youtube from './Components/backgroundVideo.js';
 import Crystal from './Components/crystal.js';
+import CardContainer from './Components/cardContainer'
 
 
 
 
  function App (){
     const [login, setLogin] = useState()
-    const [requests, setRequests] = useState()
+    const [requests, setRequests] = useState([])
     const glitch = useRef()
-    const crystal_01 = useRef()
-    const crystal_02 = useRef()
-    const crystal_03 = useRef()
+    const [crystal_01, setCrystal_01] = useState()
+    const [crystal_02, setCrystal_02] = useState()
+    const [crystal_03, setCrystal_03] = useState()
+    
 
 
+    
 
 
     useEffect(() => {
@@ -33,8 +36,8 @@ import Crystal from './Components/crystal.js';
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
         <a href='localhost:5000/api/auth/' className='btn'>{login?'Log out':'Log in'}</a>
       </div>
-
-      <Crystal crystals={[crystal_01,crystal_02,crystal_03]}/>
+      {/* <CardContainer requests={requests}/> */}
+      <Crystal crystals={[setCrystal_01,setCrystal_02,setCrystal_03]}/>
 
       <div className="leftShape"/>
       {login? <div className="rightShape"/> : null}

@@ -19,7 +19,8 @@ export const glitchWriter = async (element) => {
     }
   }
 
-export const scrollCrystal = (crystal_01,crystal_02,crystal_03) => {
+export const scrollCrystal = async (crystal_01,crystal_02,crystal_03) => {
+  if(crystal_01){
     var posY1 = 0;
     var posY2 = 0;
     var posY3 = 0;
@@ -30,10 +31,11 @@ export const scrollCrystal = (crystal_01,crystal_02,crystal_03) => {
       posY1 -= 1;
       posY2 -= 2;
       posY3 -= 3;
-      crystal_01.current.style.backgroundPosition = '0' + posY1 + 'px' 
-      crystal_02.current.style.backgroundPosition = '0' + posY2 + 'px'
-      crystal_03.current.style.backgroundPosition = '0' + posY3 + 'px'
+      crystal_01.style.backgroundPosition = '0' + posY1 + 'px' 
+      crystal_02.style.backgroundPosition = '0' + posY2 + 'px'
+      crystal_03.style.backgroundPosition = '0' + posY3 + 'px'
     },50);
+  }
   } 
 
 
