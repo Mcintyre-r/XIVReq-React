@@ -1,8 +1,9 @@
 import React, { useEffect, useState,useRef} from 'react';
 import './Scss/reset.scss';
 import './Scss/App.scss';
+import './Scss/cards.scss';
 import {scrollCrystal,glitchWriter, getRequest} from './Utility/utility.js';
-import logo from './Assets/ffxiv_req_logo.png';
+import logo from './Assets/req.png';
 import Youtube from './Components/backgroundVideo.js';
 import Crystal from './Components/crystal.js';
 import CardContainer from './Components/cardContainer'
@@ -32,11 +33,11 @@ import CardContainer from './Components/cardContainer'
   return (
     <div className="container">
       <div className="wrapper fade_in_left">
-        <img src={logo} className="" alt='FFXIV REQUISITION logo'/>
+        <img src={logo} className="logo" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
         <a href='localhost:5000/api/auth/' className='btn'>{login?'Log out':'Log in'}</a>
       </div>
-      <CardContainer requests={requests}/>
+      {/* <CardContainer requests={requests}/> */}
       <Crystal crystals={[setCrystal_01,setCrystal_02,setCrystal_03]}/>
 
       <div className="leftShape"/>

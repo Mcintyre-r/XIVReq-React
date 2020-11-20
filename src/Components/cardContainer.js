@@ -2,14 +2,13 @@ import React from 'react'
 import Card from './cards'
 
 const cardContainer = (props) => {
-    console.log(props)
  return(
-     <>
-        {props.requests.map(()=>{ 
-            //  return <Card />
+     <div className='cardContainer'>
+        {props.requests.map((request)=>{ 
+             return <Card request={request}/>
         })
         }    
-     </>
+     </div>
  )
 }
 
