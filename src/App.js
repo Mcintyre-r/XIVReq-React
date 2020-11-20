@@ -27,7 +27,7 @@ import CardContainer from './Components/cardContainer'
       glitchWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
       getRequest(setRequests)
-    },[])
+    },[crystal_01])
 
   return (
     <div className="container">
@@ -36,7 +36,7 @@ import CardContainer from './Components/cardContainer'
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
         <a href='localhost:5000/api/auth/' className='btn'>{login?'Log out':'Log in'}</a>
       </div>
-      {/* <CardContainer requests={requests}/> */}
+      <CardContainer requests={requests}/>
       <Crystal crystals={[setCrystal_01,setCrystal_02,setCrystal_03]}/>
 
       <div className="leftShape"/>

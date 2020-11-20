@@ -6,9 +6,9 @@ const cardContainer = (props) => {
  return(
      <>
         {props.requests.map(()=>{ 
-             return <Card />
+            //  return <Card />
         })
-    }    
+        }    
      </>
  )
 }
