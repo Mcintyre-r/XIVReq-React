@@ -1,0 +1,69 @@
+.glitch {
+	position: relative;
+	padding-left: 30px;
+	font-size: 20px;
+	color: black;
+
+	&::after, &::before {
+		content: attr(data-decrypted-text);
+		position: absolute;
+		opacity: 0;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		padding-left: 30px;
+		overflow: hidden;
+		color: white;
+    }
+	&::before {
+		z-index: -2;
+		color: #D93DA5;
+    }
+	&.glitch-writing {
+		animation: glitch-skew 1s steps(10, end) infinite alternate-reverse;
+
+		&::after, &::before{
+            opacity: 1;
+        }
+
+		&::after {
+			animation: glitch-animation-1 1.5s steps(20, end) infinite alternate-reverse;
+        }
+		&::before {
+            animation: glitch-animation-2 2s steps(20, end) infinite alternate-reverse;
+        }
+    }
+	@keyframes glitch-skew {
+		$steps: 10;
+
+		@for $i from 0 through $steps {
+			#{percentage($i * 1 / $steps)} {
+                transform: skew(random(10) - 5 + deg)
+            }
+            
+        }
+    }
+
+	@keyframes glitch-animation-1{
+		$steps: 20;
+
+		@for $i from 0 through $steps{
+			#{percentage($i * 1 / $steps)} {
+				clip: rect(random(100) + px, 1000px, random(100) + px, 0);
+                transform: skew(random(16) - 8 + deg) translatex(random(30) - 15 + px);
+            }
+        }
+    }
+
+	@keyframes glitch-animation-2 {
+		$steps: 20;
+
+		@for $i from 0 through $steps{
+			#{percentage($i * 1 / $steps)}{
+				clip: rect(random(100) + px, 1000px, random(100) + px, 0);
+                transform: skew(random(10) - 5 + deg) translatex(random(20) - 10 + px);
+            }
+        }
+    }
+}

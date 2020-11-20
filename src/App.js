@@ -1,7 +1,4 @@
 import React, { useEffect, useState,useRef} from 'react';
-import './Scss/reset.scss';
-import './Scss/App.scss';
-import './Scss/cards.scss';
 import {scrollCrystal,glitchWriter, getRequest} from './Utility/utility.js';
 import logo from './Assets/req.png';
 import Youtube from './Components/backgroundVideo.js';
@@ -18,11 +15,6 @@ import CardContainer from './Components/cardContainer'
     const [crystal_01, setCrystal_01] = useState()
     const [crystal_02, setCrystal_02] = useState()
     const [crystal_03, setCrystal_03] = useState()
-    
-
-
-    
-
 
     useEffect(() => {
       glitchWriter(glitch.current)
