@@ -1,5 +1,55 @@
 .cardContainer{
     overflow-y: scroll;
-    max-height: 200px;
-    background-color: blue;
+    min-height: 80%;
+    font-family: 'M PLUS 1p', sans-serif;
+    // background-color: blue;
+    position: absolute;
+    right: 25px;
+    width: 700px;
+    top: 45px;
+    -webkit-animation: fade-in-right 4s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
+    animation: fade-in-right 4s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
 }
+.card{
+    background: rgba(255,255,255,.7);
+    margin: 10px auto 0;
+    padding: 10px;
+    width: 90%;
+    border-radius: 20px;
+    
+    .topCardContainer{
+        display: flex;
+        justify-content: space-around;
+        .itemIcon{
+            width: 60px;
+            height: 60px;
+            padding-bottom: 3px;
+        }
+        .requestDescrip{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .requestOptions{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+
+
+    .bottomCardContainer{
+        display: flex;
+        justify-content: space-around;
+        padding: 7px 0 0 0;
+        border-top: 1px black solid ;
+        
+    }
+}
+
+
+
+
+
+
+

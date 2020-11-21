@@ -7,6 +7,8 @@ import './Scss/cards.scss';
 import './Scss/crystals.scss';
 import './Scss/video.scss';
 import './Scss/glitch.scss';
+import './Scss/user.scss';
+import './Scss/keyframes.scss';
 
 ReactDOM.render(
   <React.StrictMode>

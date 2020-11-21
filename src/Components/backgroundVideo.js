@@ -16,7 +16,7 @@ const videoOptions = {
     }
   };
 
-const backgroundVideo = () =>{
+const backgroundVideo = (props) =>{
     return(
     <div className="video-background">
         <div className="video-foreground">
@@ -25,7 +25,7 @@ const backgroundVideo = () =>{
             opts={videoOptions}
             className="video-iframe"
             onReady={(event)=> event.target.mute()}
-            onEnd={(event)=> event.target.seekTo(4)}
+            onEnd={(event)=> event.target.seekTo(9)}
             />
         </div>
     </div>
