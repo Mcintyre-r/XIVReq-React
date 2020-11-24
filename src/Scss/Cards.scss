@@ -27,6 +27,7 @@
         }
         .requestDescrip{
             display: flex;
+            width: 60%;
             flex-direction: column;
             justify-content: space-around;
         }
@@ -34,6 +35,23 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+            .completed{
+                padding: 0 5px;
+                border-radius: 5px;
+                background-color: #3CB371;
+                border: solid 1px black;
+            }
+            .uncompleted{
+                padding: 0 5px;
+                border-radius: 5px;
+                background-color: #FF7F50
+                ;
+                border: solid 1px black;
+            }
+            button{
+                border: solid 1px black;
+                border-radius: 5px;
+            }
         }
     }
 

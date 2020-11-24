@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './Scss/reset.scss';
 import './Scss/App.scss';
-import './Scss/cards.scss';
+import './Scss/Cards.scss';
 import './Scss/crystals.scss';
 import './Scss/video.scss';
 import './Scss/glitch.scss';
