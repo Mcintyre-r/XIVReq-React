@@ -41,6 +41,10 @@ export const scrollCrystal = async (crystal_01,crystal_02,crystal_03) => {
 
 export const getRequest =  (setFunc) => {
   Axios.get('http://localhost:5000/api/requests/').then( res => {
-    setFunc(res.data.Requests)
+    const requests = res.data.Requests
+    requests.sort( (a, b) => {
+      return a.completed - b.completed
+    })
+    setFunc(requests)
   })
 }
