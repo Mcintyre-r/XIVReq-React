@@ -2,8 +2,7 @@ import React from 'react'
 
 const cards = (props) => {
 
-    console.log(props.request)
-
+    // console.log(props.request)
 return(
     <div className='card'>
         <div className='topCardContainer'>
@@ -18,8 +17,20 @@ return(
             </div>
             <div className='requestOptions'>
                 <div className={props.request.completed? 'completed' : 'uncompleted'}>{props.request.completed? 'Completed' : 'In Progress'}</div>
-                <button>Export</button>
-                <button>Delete</button>
+                {props.teamCraft.includes(props.request)?
+                    <div className='btn selected' onClick={()=> {
+                        const index = props.teamCraft.indexOf(props.request)
+                        const copyOfTC = props.teamCraft
+                        copyOfTC.splice(index,1)
+                        props.setTC([...copyOfTC])
+                        // console.log(props.teamCraft)
+                    }}>Deselect</div>:
+                    <div className='btn' onClick={()=> {
+                        props.setTC([...props.teamCraft, props.request])
+                        // console.log(props.teamCraft)
+                    }}>Select</div>
+            }
+                <div className='btn'>Delete</div>
             </div>
         </div>
         <div className='bottomCardContainer'>

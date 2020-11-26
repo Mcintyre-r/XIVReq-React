@@ -48,9 +48,18 @@
                 ;
                 border: solid 1px black;
             }
-            button{
+            .btn{
                 border: solid 1px black;
                 border-radius: 5px;
+                text-align: center;
+                background-color: white;
+                &:hover{
+                    background-color: black;
+                    color:white;
+                }
+                &.selected{
+                    background-color: #FF7F50;
+                }
             }
         }
     }

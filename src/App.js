@@ -5,6 +5,7 @@ import Youtube from './Components/backgroundVideo.js';
 import Crystal from './Components/crystal.js';
 import CardContainer from './Components/cardContainer'
 import User from './Components/user'
+import { set } from 'js-cookie';
 
 
 
@@ -17,14 +18,20 @@ import User from './Components/user'
     const [crystal_01, setCrystal_01] = useState()
     const [crystal_02, setCrystal_02] = useState()
     const [crystal_03, setCrystal_03] = useState()
+    const [teamCraft, setTeamCraft] = useState([])
     const [mute, setMute] = useState(true)
-
+    // const [importString, setImportString] = useState('')
     useEffect(() => {
       glitchWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
       getRequest(setRequests)
 
     },[crystal_01])
+
+
+
+
+
 
   return (
     <div className="container">
@@ -37,8 +44,19 @@ import User from './Components/user'
         // href='localhost:5000/api/auth/'
         <a onClick={()=>setLogin(!login)} className='btn'>Log in</a>    
         }
+        <div className='btn' onClick={ ()=> {
+          let importString = ''
+          for(const request of teamCraft){
+            const ID = request.itemID.toString();
+            const quantity = request.quantity.toString();
+            const addition = `${ID},null,${quantity};`
+            importString = importString+addition
+          }
+          const base64String = btoa(importString.slice(0,-1))
+          window.open(`https://ffxivteamcraft.com/import/${base64String}`)
+        }}> export </div>
       </div>
-      {login? <CardContainer requests={requests}/> : null}
+      {login? <CardContainer requests={requests} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}
       <Crystal crystals={[setCrystal_01,setCrystal_02,setCrystal_03]}/>
 
       <div className="leftShape"/>
