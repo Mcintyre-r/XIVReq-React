@@ -1,11 +1,11 @@
 import React, { useEffect, useState,useRef} from 'react';
-import {scrollCrystal,glitchWriter, getRequest} from './Utility/utility.js';
+import {scrollCrystal,glitchWriter, getRequest, exportHandler} from './Utility/utility.js';
 import logo from './Assets/req.png';
 import Youtube from './Components/backgroundVideo.js';
 import Crystal from './Components/crystal.js';
 import CardContainer from './Components/cardContainer'
 import User from './Components/user'
-import { set } from 'js-cookie';
+
 
 
 
@@ -44,25 +44,14 @@ import { set } from 'js-cookie';
         // href='localhost:5000/api/auth/'
         <a onClick={()=>setLogin(!login)} className='btn'>Log in</a>    
         }
-        <div className='btn' onClick={ ()=> {
-          let importString = ''
-          for(const request of teamCraft){
-            const ID = request.itemID.toString();
-            const quantity = request.quantity.toString();
-            const addition = `${ID},null,${quantity};`
-            importString = importString+addition
-          }
-          const base64String = btoa(importString.slice(0,-1))
-          window.open(`https://ffxivteamcraft.com/import/${base64String}`)
-        }}> export </div>
+        <div className='btn' onClick={ ()=> { exportHandler(teamCraft)}}> export </div>
       </div>
       {login? <CardContainer requests={requests} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}
       <Crystal crystals={[setCrystal_01,setCrystal_02,setCrystal_03]}/>
 
       <div className="leftShape"/>
       {login? <div className="rightShape"/> : null}
-      
-
+    
       <Youtube mute={mute} />
     </div>
   );
