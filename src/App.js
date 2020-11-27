@@ -1,5 +1,8 @@
 import React, { useEffect, useState,useRef} from 'react';
-import {scrollCrystal,glitchWriter, getRequest, exportHandler} from './Utility/utility.js';
+import scrollCrystal from './Utility/scrollCrystal.js';
+import glitchWriter from './Utility/glitchWriter.js';
+import requestHandler from './Utility/requestHandler.js';
+import exportHandler from './Utility/exportHandler.js';
 import logo from './Assets/req.png';
 import Youtube from './Components/backgroundVideo.js';
 import Crystal from './Components/crystal.js';
@@ -24,7 +27,7 @@ import User from './Components/user'
     useEffect(() => {
       glitchWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
-      getRequest(setRequests)
+      requestHandler(setRequests)
 
     },[crystal_01])
 
