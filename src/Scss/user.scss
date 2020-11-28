@@ -1,11 +1,12 @@
 .userCard{
     display: flex;
-    margin-top: 10px;
+    margin-top: 40px;
     // margin-left: 40px;
     // border: solid black 1px;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,1);
     color: white;
     width: 200px;
+    max-height: 30px;
     border-top-right-radius: 45px;
     border-bottom-right-radius: 45px;
     border-top-left-radius: 45px;
@@ -13,8 +14,10 @@
     font-family: 'M PLUS 1p', sans-serif;
     .userAvatar{
         border-radius: 50%;
-        max-width: 60px;
-        padding: 3px;
+        border: rgba(0,0,0,1) solid;
+        margin-top: -20px;
+        min-width: 60px;
+        min-height: 60px;
     }
     .userInfo{
         text-align: center;
