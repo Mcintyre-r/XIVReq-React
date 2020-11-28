@@ -6,7 +6,7 @@ const cards = (props) => {
 return(
     <div className='card'>
         <div className='topCardContainer'>
-            <img src={props.request.itemIcon}  className='itemIcon'/>
+            <img src={props.request.itemIcon}  className='itemIcon' alt='item icon'/>
             <div className='requestDescrip'>
                 <div className='itemName'>
                     <h6>{props.request.item}</h6>

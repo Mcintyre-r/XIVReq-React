@@ -6,10 +6,10 @@ const cardContainer = (props) => {
      <div className='rightContainer'>
         <div className='buttonContainer'>
             <div className={props.teamCraft.length?'exportBtn':'exportBtn disabled'} onClick={ ()=> { props.exportHandler(props.teamCraft)}}> Export </div>
-            <a className='exportBtn' onClick={()=> { 
+            <div className='exportBtn' onClick={()=> { 
                             props.setUser()
                             props.setLogin(false)}
-                        }>Logout</a>
+                        }>Logout</div>
         </div>
         <div className='cardContainer'>
             {props.requests.map((request)=>{ 

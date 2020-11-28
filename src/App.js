@@ -33,7 +33,7 @@ const testUser = {
       scrollCrystal(crystal_01,crystal_02,crystal_03)
       requestHandler(setRequests)
 
-    },[crystal_01])
+    },[crystal_01, crystal_02, crystal_03])
 
 
 
@@ -49,10 +49,10 @@ const testUser = {
         <User  userName={user.Name} userAvatar={user.Avatar}/>
         :
         // href='localhost:5000/api/auth/'
-        <a onClick={()=>{
+        <div onClick={()=>{
           setUser(testUser)
           setLogin(true)
-        }} className='btn'>Log in</a>    
+        }} className='btn'>Log in</div>    
         }
       </div>
       {user? <CardContainer setLogin={setLogin} setUser={setUser} requests={requests} exportHandler={exportHandler} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}
