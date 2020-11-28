@@ -10,20 +10,24 @@ import CardContainer from './Components/cardContainer'
 import User from './Components/user'
 
 
-
+const testUser = {
+  Name:'Exa#0469',
+  Avatar:'https://cdn.discordapp.com/avatars/59423394055069696/a1e332503465aed23e81bf3ff3e5272d.webp',
+  Crafter:true
+}
 
 
 
  function App (){
-    const [login, setLogin] = useState(true)
+    const [login, setLogin] = useState(false)
+    const [user, setUser] = useState()
     const [requests, setRequests] = useState([])
     const glitch = useRef()
     const [crystal_01, setCrystal_01] = useState()
     const [crystal_02, setCrystal_02] = useState()
     const [crystal_03, setCrystal_03] = useState()
     const [teamCraft, setTeamCraft] = useState([])
-    const [mute, setMute] = useState(true)
-    // const [importString, setImportString] = useState('')
+
     useEffect(() => {
       glitchWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
@@ -42,20 +46,23 @@ import User from './Components/user'
         <img src={logo} className="logo" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
         { login ? 
-        <User setLogin={setLogin} userName='Exa#0469' userAvatar='https://cdn.discordapp.com/avatars/59423394055069696/a1e332503465aed23e81bf3ff3e5272d.webp'/>
+        <User setLogin={setLogin} setUser={setUser} userName={user.Name} userAvatar={user.Avatar}/>
         :
         // href='localhost:5000/api/auth/'
-        <a onClick={()=>setLogin(!login)} className='btn'>Log in</a>    
+        <a onClick={()=>{
+          setUser(testUser)
+          setLogin(true)
+        }} className='btn'>Log in</a>    
         }
         <div className='btn' onClick={ ()=> { exportHandler(teamCraft)}}> export </div>
       </div>
-      {login? <CardContainer requests={requests} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}
+      {user? <CardContainer requests={requests} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}
       <Crystal crystals={[setCrystal_01,setCrystal_02,setCrystal_03]}/>
 
       <div className="leftShape"/>
-      {login? <div className="rightShape"/> : null}
+      {user? <div className="rightShape"/> : null}
     
-      <Youtube mute={mute} />
+      <Youtube />
     </div>
   );
 }
