@@ -1,14 +1,56 @@
+
+.rightContainer{
+    right: 25px;
+    width: 700px;
+    top: 45px;
+    position: absolute;
+    -webkit-animation: fade-in-right 4s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
+    animation: fade-in-right 4s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
+}
+.buttonContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+    .exportBtn{
+        text-decoration: none;
+        text-align: center;
+        padding: 4px 10px;
+        color: black;
+        margin-top:20px;
+        margin-left: 4.5%;
+        font-family: 'M PLUS 1p', sans-serif;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: solid 1px black;
+        cursor:pointer;
+        &:focus{
+            outline: none;
+            box-shadow: none;
+        }
+        &:hover{
+            color:white;
+            background-color: black;
+        }
+    }
+    .disabled{
+    
+        background-color: rgba(0, 0, 0, 0.8);
+        cursor: not-allowed;
+        pointer-events: none;
+        &:hover{
+            color:black;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+}
+
+
+
 .cardContainer{
     overflow-y: scroll;
     min-height: 80%;
     font-family: 'M PLUS 1p', sans-serif;
-    // background-color: blue;
-    position: absolute;
-    right: 25px;
-    width: 700px;
-    top: 45px;
-    -webkit-animation: fade-in-right 4s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
-    animation: fade-in-right 4s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
+
+    
 }
 .card{
     background: rgba(255,255,255,.7);

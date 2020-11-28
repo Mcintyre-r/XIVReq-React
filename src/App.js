@@ -46,7 +46,7 @@ const testUser = {
         <img src={logo} className="logo" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
         { login ? 
-        <User setLogin={setLogin} setUser={setUser} userName={user.Name} userAvatar={user.Avatar}/>
+        <User  userName={user.Name} userAvatar={user.Avatar}/>
         :
         // href='localhost:5000/api/auth/'
         <a onClick={()=>{
@@ -54,9 +54,8 @@ const testUser = {
           setLogin(true)
         }} className='btn'>Log in</a>    
         }
-        <div className='btn' onClick={ ()=> { exportHandler(teamCraft)}}> export </div>
       </div>
-      {user? <CardContainer requests={requests} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}
+      {user? <CardContainer setLogin={setLogin} setUser={setUser} requests={requests} exportHandler={exportHandler} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}
       <Crystal crystals={[setCrystal_01,setCrystal_02,setCrystal_03]}/>
 
       <div className="leftShape"/>

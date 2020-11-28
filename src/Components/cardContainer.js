@@ -2,12 +2,22 @@ import React from 'react'
 import Card from './cards'
 
 const cardContainer = (props) => {
+    console.log(props.teamCraft)
  return(
-     <div className='cardContainer'>
-        {props.requests.map((request)=>{ 
-             return <Card request={request} teamCraft={props.teamCraft} setTC={props.setTC}/>
-        })
-        }    
+     <div className='rightContainer'>
+        <div className='buttonContainer'>
+            <div className={props.teamCraft.length?'exportBtn':'exportBtn disabled'} onClick={ ()=> { props.exportHandler(props.teamCraft)}}> Export </div>
+            <a className='exportBtn' onClick={()=> { 
+                            props.setUser()
+                            props.setLogin(false)}
+                        }>Logout</a>
+        </div>
+        <div className='cardContainer'>
+            {props.requests.map((request)=>{ 
+                return <Card request={request} teamCraft={props.teamCraft} setTC={props.setTC}/>
+            })
+            }    
+        </div>
      </div>
  )
 }

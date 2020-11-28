@@ -5,10 +5,6 @@ const user = (props) => {
         <div className='userCard'>
             <div className='userInfo'>
                 <h2>{props.userName}</h2>
-                <a onClick={()=> { 
-                    props.setUser()
-                    props.setLogin(false)}
-                }>Click to Logout</a>
             </div>
             <img className='userAvatar' src={props.userAvatar} />
         </div>
