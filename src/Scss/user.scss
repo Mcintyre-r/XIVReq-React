@@ -14,8 +14,9 @@
     font-family: 'M PLUS 1p', sans-serif;
     .userAvatar{
         border-radius: 50%;
-        border: rgba(0,0,0,1) solid;
-        margin-top: -20px;
+        border: rgba(0,0,0,1) solid 1px;
+        margin-top: -16px;
+        margin-left: 10px;
         min-width: 60px;
         min-height: 60px;
     }

@@ -46,7 +46,7 @@ const testUser = {
         <img src={logo} className="logo" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
         { login ? 
-        <User  userName={user.Name} userAvatar={user.Avatar}/>
+        <User  userName={user.Name.length>10? user.Name.slice(0,8)+'~': user.Name} userAvatar={user.Avatar}/>
         :
         // href='localhost:5000/api/auth/'
         <div onClick={()=>{
