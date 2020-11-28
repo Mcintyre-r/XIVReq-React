@@ -2,7 +2,6 @@ import React from 'react'
 import Card from './cards'
 
 const cardContainer = (props) => {
-    console.log(props.teamCraft)
  return(
      <div className='rightContainer'>
         <div className='buttonContainer'>

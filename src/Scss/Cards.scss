@@ -1,4 +1,6 @@
 
+
+
 .rightContainer{
     right: 25px;
     width: 700px;
@@ -48,9 +50,7 @@
 .cardContainer{
     overflow-y: scroll;
     min-height: 80%;
-    font-family: 'M PLUS 1p', sans-serif;
-
-    
+    font-family: 'M PLUS 1p', sans-serif;   
 }
 .card{
     background: rgba(255,255,255,.7);
@@ -95,6 +95,7 @@
                 border-radius: 5px;
                 text-align: center;
                 background-color: white;
+                cursor:pointer;
                 &:hover{
                     background-color: black;
                     color:white;
