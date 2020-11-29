@@ -1,20 +1,30 @@
 import React from 'react'
 
+
 const cards = (props) => {
 
-    // console.log(props.request)
 return(
-    <div className='card'>
-        <div className='topCardContainer'>
-            <img src={props.request.itemIcon}  className='itemIcon' alt='item icon'/>
-            <div className='requestDescrip'>
-                <div className='itemName'>
-                    <h6>{props.request.item}</h6>
-                </div>
-                <div className='Quantity'>
-                    <h6>{props.request.quantity} {props.request.quantity === 1 ? 'item' : 'items'}</h6>
-                </div>
+    <div className=' itemCard'>
+
+            <div className='topCardContainer'>
+                <img src={props.request.itemIcon}  className='itemIcon' alt='item icon'/>
+                <div className='requestDescrip'>
+                    <div className='itemName'>
+                        <h6>{props.request.item}</h6>
+                    </div>
+                    <div className='Quantity'>
+                        <h6>{props.request.quantity} {props.request.quantity === 1 ? 'item' : 'items'}</h6>
+                    </div>
+                    <div className='Crafter'>
+                        Crafter: {props.request.claimed? props.request.worker : 'unclaimed'}
+                        {props.request.claimed? <img src={props.request.workerPicture} alt='worker'/>: <img src='https://www.iconpacks.net/icons/2/free-sad-face-icon-2691-thumb.png'/>}
+                    </div>    
+                </div>           
+                    
+                
             </div>
+            
+
             <div className='requestOptions'>
                 <div className={props.request.completed? 'completed' : 'uncompleted'}>{props.request.completed? 'Completed' : 'In Progress'}</div>
                 {props.teamCraft.includes(props.request)?
@@ -23,24 +33,15 @@ return(
                         const copyOfTC = props.teamCraft
                         copyOfTC.splice(index,1)
                         props.setTC([...copyOfTC])
-                        // console.log(props.teamCraft)
                     }}>Deselect</div>:
                     <div className='btn' onClick={()=> {
                         props.setTC([...props.teamCraft, props.request])
-                        // console.log(props.teamCraft)
                     }}>Select</div>
             }
-                <div className='btn'>Delete</div>
+                <div className='btn'>{props.request.completed? 'Resolve': 'Delete'}</div>
             </div>
-        </div>
-        <div className='bottomCardContainer'>
-            <div className='requester'>
-                Requester: {props.request.requestedBy}
-            </div>
-            <div className='crafter'>
-                Crafter: UNCLAIMED
-            </div>
-        </div>
+        
+        
       
     </div>
 )

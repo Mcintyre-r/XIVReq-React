@@ -50,73 +50,84 @@
 .cardContainer{
     overflow-y: scroll;
     min-height: 80%;
+    max-height: 80vh;
+    margin-top: 5px;
     font-family: 'M PLUS 1p', sans-serif;   
 }
-.card{
+.itemCard{
     background: rgba(255,255,255,.7);
-    margin: 10px auto 0;
+    margin: 10px 5px 0 auto;
     padding: 10px;
-    width: 90%;
+    width: 70%;
     border-radius: 20px;
-    
-    .topCardContainer{
-        display: flex;
-        justify-content: space-around;
-        .itemIcon{
-            width: 60px;
-            height: 60px;
-            padding-bottom: 3px;
-        }
-        .requestDescrip{
+    display:flex;  
+        .topCardContainer{
+            width: 80%;
             display: flex;
-            width: 60%;
-            flex-direction: column;
             justify-content: space-around;
-        }
-        .requestOptions{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            .completed{
-                padding: 0 5px;
-                border-radius: 5px;
-                background-color: #3CB371;
-                border: solid 1px black;
+
+            .itemIcon{
+                width: 60px;
+                height: 60px;
             }
-            .uncompleted{
-                padding: 0 5px;
-                border-radius: 5px;
-                background-color: #FF7F50
-                ;
-                border: solid 1px black;
-            }
-            .btn{
-                border: solid 1px black;
-                border-radius: 5px;
-                text-align: center;
-                background-color: white;
-                cursor:pointer;
-                &:hover{
-                    background-color: black;
-                    color:white;
-                }
-                &.selected{
-                    background-color: #FF7F50;
+            .requestDescrip{
+                display: flex;
+                width: 70%;
+                flex-direction: column;
+                justify-content: space-between;
+                .Crafter{  
+                    img{
+                        border-radius: 50%;
+                        margin-left: 5px;
+                        margin-bottom: -3px;
+                        max-width: 20px;
+                        max-height: 20px;
+                    }
                 }
             }
-        }
-    }
-
-
-    .bottomCardContainer{
-        display: flex;
-        justify-content: space-around;
-        padding: 7px 0 0 0;
-        border-top: 1px black solid ;
+            
         
-    }
+
+        }
+    
 }
 
+
+
+
+.requestOptions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .completed{
+        padding: 0 5px;
+        border-radius: 5px;
+        background-color: #3CB371;
+        border: solid 1px black;
+    }
+    .uncompleted{
+        padding: 0 5px;
+        border-radius: 5px;
+        background-color: #FF7F50
+        ;
+        border: solid 1px black;
+    }
+    .btn{
+        border: solid 1px black;
+        border-radius: 5px;
+        text-align: center;
+        background-color: white;
+        margin-top: 3px;
+        cursor:pointer;
+        &:hover{
+            background-color: black;
+            color:white;
+        }
+        &.selected{
+            background-color: #FF7F50;
+        }
+    }
+}
 
 
 
