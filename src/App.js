@@ -8,7 +8,7 @@ import Youtube from './Components/backgroundVideo.js';
 import Crystal from './Components/crystal.js';
 import CardContainer from './Components/cardContainer'
 import User from './Components/user'
-
+import userLogin from './Utility/userLogin'
 
 
 const testUser = {
@@ -28,18 +28,17 @@ const testUser = {
     const [crystal_02, setCrystal_02] = useState()
     const [crystal_03, setCrystal_03] = useState()
     const [teamCraft, setTeamCraft] = useState([])
+   console.log(window.location.search)
 
     useEffect(() => {
       glitchWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
       requestHandler(setRequests)
+      userLogin(window.location.search, setLogin, setUser)
 
     },[crystal_01, crystal_02, crystal_03])
 
 
-
-
-//test
 
   return (
     <div className="container">
@@ -49,11 +48,10 @@ const testUser = {
         { login ? 
         <User  userName={user.Name.length>10? user.Name.slice(0,8)+'~': user.Name} userAvatar={user.Avatar}/>
         :
-        // href='localhost:5000/api/auth/'
-        <div onClick={()=>{
-          setUser(testUser)
-          setLogin(true)
-        }} className='btn'>Log in</div>    
+        <a  href='http://localhost:5000/api/auth/login'
+          // setUser(testUser)
+          // setLogin(true)
+        className='btn'>Log in</a>    
         }
       </div>
       {user? <CardContainer setLogin={setLogin} setUser={setUser} requests={requests} exportHandler={exportHandler} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}

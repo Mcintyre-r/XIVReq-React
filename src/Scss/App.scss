@@ -36,6 +36,7 @@
     width:700px;
     margin: 300px 38px 0 35px;
     min-width: 600px;
+    z-index: 99;
     -webkit-animation: fade-in-left 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
     animation: fade-in-left 2s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
 
