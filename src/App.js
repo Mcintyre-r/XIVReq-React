@@ -20,8 +20,8 @@ const testUser = {
 
 
  function App (){
-    const [login, setLogin] = useState(false)
-    const [user, setUser] = useState()
+    const [login, setLogin] = useState(true)
+    const [user, setUser] = useState(testUser)
     const [requests, setRequests] = useState([])
     const glitch = useRef()
     const [crystal_01, setCrystal_01] = useState()

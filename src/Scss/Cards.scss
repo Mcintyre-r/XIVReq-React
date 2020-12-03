@@ -4,10 +4,22 @@
 .rightContainer{
     right: 25px;
     width: 700px;
-    top: 45px;
+    top: 25px;
     position: absolute;
     -webkit-animation: fade-in-right 4s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
     animation: fade-in-right 4s cubic-bezier(0.680, -0.550, 0.265, 1.550) 2s both;
+    @media(max-width:1500px){
+        top: 180px;
+    }
+    @media(max-width:600px){
+        right: 0;
+        width: 100%;
+        top: 140px;
+    }
+    @media(max-width: 500px){
+        
+        top:50px;
+    }
 }
 .buttonContainer{
     display: flex;
@@ -61,10 +73,20 @@
     width: 70%;
     border-radius: 20px;
     display:flex;  
+    @media(max-width: 500px){
+        margin: 0;
+        padding: 10px 0;
+        width:100%;
+        border-radius: 0;
+        border-bottom: 1px solid black;
+    }
         .topCardContainer{
             width: 80%;
             display: flex;
             justify-content: space-around;
+            @media(max-width:500px){
+                width: 100%;
+            }
 
             .itemIcon{
                 width: 60px;
