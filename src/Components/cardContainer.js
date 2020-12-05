@@ -6,7 +6,7 @@ const cardContainer = (props) => {
      <div className='rightContainer'>
         <div className='buttonContainer'>
             <div className={props.teamCraft.length?'exportBtn':'exportBtn disabled'} onClick={ ()=> { props.exportHandler(props.teamCraft)}}> Export </div>
-            <a className='exportBtn' href='http://xivreq.com' onClick={()=> { 
+            <a className='exportBtn' href='https://xivreq.com' onClick={()=> { 
                             localStorage.removeItem('xivReqUser');
                         }
                         }>Logout</a>
