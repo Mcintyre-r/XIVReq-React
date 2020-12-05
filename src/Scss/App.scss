@@ -102,6 +102,9 @@ h1{
     height: 100%;
     transform:skew(-20deg);
     background: rgba(255, 255, 255, 0.5);
+    @media(max-width: 500px) {
+        width:1000px;
+    }
 }
 .rightShape{
     z-index: -1;
