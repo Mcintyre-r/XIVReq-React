@@ -17,7 +17,7 @@ return(
                     </div>
                     <div className='Crafter'>
                         Crafter: {props.request.claimed? props.request.worker : 'unclaimed'}
-                        {props.request.claimed? <img src={props.request.workerPicture} alt='worker'/>: <img src='https://www.iconpacks.net/icons/2/free-sad-face-icon-2691-thumb.png'/>}
+                        {props.request.claimed? <img src={`https://cdn.discordapp.com/avatars/${props.request.workerID}/${props.request.workerPicture}.png`} alt='worker'/>: <img src='https://www.iconpacks.net/icons/2/free-sad-face-icon-2691-thumb.png'/>}
                     </div>    
                 </div>           
                     
