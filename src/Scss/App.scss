@@ -116,6 +116,9 @@ h1{
     transform:skew(-20deg);
     background: rgba(0, 0, 0, 0.5);
     animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
+    @media(max-width: 500px) {
+        display:none;
+    }
 }
 
 
