@@ -5,9 +5,9 @@ const wait = time => new Promise(resolve => setTimeout(resolve, time))
 const glitchWriter = async (element) => {
     const displayWriter = setGlitchedWriter(element, {})
     let index = 0
-    const messages = ["Login via discord to continue", "A FFXIV work order system"]
+    const messages = ["Thank you for using XIV Req", "Direct any feedback to Exa#0469", "Alpha Version 0.001"]
     await wait(3000)
-    displayWriter.write("A FFXIV work order system", {})
+    displayWriter.write("Alpha Version 0.001", {})
     while(0 != 1){
       await wait(18000)
       displayWriter.write(messages[index], {})

@@ -11,7 +11,7 @@ const userLogin = (oAuth, setLogin, setUser, user) => {
     }
     else if(oAuth){
         const uuid = oAuth.split('=')[1]
-        Axios.get('http://localhost:5000/api/user/', { params: {'uuid': uuid}})
+        Axios.get('https://xivreq.herokuapp.com/api/user/', { params: {'uuid': uuid}})
             .then( res => {
                 if(!res.data) return null
                 console.log(res.data)

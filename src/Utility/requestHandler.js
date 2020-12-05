@@ -2,7 +2,7 @@ import Axios from 'axios'
 
 
 const requestHandler =  (setFunc) => {
-    Axios.get('http://localhost:5000/api/requests/').then( res => {
+    Axios.get('https://xivreq.herokuapp.com/api/request/').then( res => {
       const requests = res.data.Requests
       requests.sort( (a, b) => {
         return a.completed - b.completed
