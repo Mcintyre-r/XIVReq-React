@@ -11,30 +11,23 @@ import User from './Components/user'
 import userLogin from './Utility/userLogin'
 
 
-const testUser = {
-  Name:'Exa#0469',
-  Avatar:'https://cdn.discordapp.com/avatars/59423394055069696/a1e332503465aed23e81bf3ff3e5272d.webp',
-  Crafter:true
-}
-
-
 
  function App (){
     const [login, setLogin] = useState(false)
-    const [user, setUser] = useState()
+    const [user, setUser] = useState(localStorage.getItem('xivReqUser')||'')
     const [requests, setRequests] = useState([])
     const glitch = useRef()
     const [crystal_01, setCrystal_01] = useState()
     const [crystal_02, setCrystal_02] = useState()
     const [crystal_03, setCrystal_03] = useState()
     const [teamCraft, setTeamCraft] = useState([])
-   console.log(window.location.search)
+   console.log(user)
 
     useEffect(() => {
       glitchWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
       requestHandler(setRequests)
-      userLogin(window.location.search, setLogin, setUser)
+      userLogin(window.location.search, setLogin, setUser, user)
 
     },[crystal_01, crystal_02, crystal_03])
 
@@ -46,12 +39,9 @@ const testUser = {
         <img src={logo} className="logo" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
         { login ? 
-        <User  userName={user.Name.length>10? user.Name.slice(0,8)+'~': user.Name} userAvatar={user.Avatar}/>
+        <User  userName={user.username.length>7? user.username.slice(0,6)+'~'+'#'+user.discriminator: user.username+'#'+user.discriminator} userAvatar={`https://cdn.discordapp.com/avatars/${user.uuid}/${user.avatar}.png`}/>
         :
-        <a  href='http://localhost:5000/api/auth/login'
-          // setUser(testUser)
-          // setLogin(true)
-        className='btn'>Log in</a>    
+        <a  href='http://localhost:5000/api/auth/login' className='btn'>Log in</a>    
         }
       </div>
       {user? <CardContainer setLogin={setLogin} setUser={setUser} requests={requests} exportHandler={exportHandler} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}

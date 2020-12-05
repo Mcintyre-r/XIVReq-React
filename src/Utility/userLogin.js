@@ -1,10 +1,25 @@
 import Axios from 'axios';
 
 
-const userLogin = (oAuth, setLogin, setUser) => {
-    if(oAuth){
-        console.log(oAuth)
-        // setLogin(true)
+const userLogin = (oAuth, setLogin, setUser, user) => {
+    if(user){
+        console.log(user)
+        if(typeof user === 'string'){
+            setUser(JSON.parse(user))
+        }
+        setLogin(true)
+    }
+    else if(oAuth){
+        const uuid = oAuth.split('=')[1]
+        Axios.get('http://localhost:5000/api/user/', { params: {'uuid': uuid}})
+            .then( res => {
+                if(!res.data) return null
+                console.log(res.data)
+                localStorage.setItem('xivReqUser', JSON.stringify(res.data))
+                setUser(res.data)
+                setLogin(true)
+            })
+            .catch(err => console.log(err))
     }
 }
 
