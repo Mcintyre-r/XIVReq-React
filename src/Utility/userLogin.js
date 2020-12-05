@@ -14,7 +14,6 @@ const userLogin = (oAuth, setLogin, setUser, user) => {
         Axios.get('https://xivreq.herokuapp.com/api/user/', { params: {'uuid': uuid}})
             .then( res => {
                 if(!res.data) return null
-                console.log(res.data)
                 localStorage.setItem('xivReqUser', JSON.stringify(res.data))
                 setUser(res.data)
                 setLogin(true)

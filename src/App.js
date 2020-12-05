@@ -25,8 +25,8 @@ import userLogin from './Utility/userLogin'
     useEffect(() => {
       glitchWriter(glitch.current)
       scrollCrystal(crystal_01,crystal_02,crystal_03)
-      requestHandler(setRequests)
       userLogin(window.location.search, setLogin, setUser, user)
+      requestHandler(setRequests, user)
 
     },[crystal_01, crystal_02, crystal_03])
 
