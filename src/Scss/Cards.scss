@@ -64,7 +64,18 @@
     min-height: 80%;
     max-height: 80vh;
     margin-top: 5px;
-    font-family: 'M PLUS 1p', sans-serif;   
+    font-family: 'M PLUS 1p', sans-serif;  
+    .bar{
+        padding: 0 20px;
+        background: rgba(255,255,255,.7);
+        border: 1px solid black;
+        border-radius: 5px;
+        display:flex;
+        justify-content: space-between;
+    } 
+    .hidden{
+        display:none;
+    }
 }
 .itemCard{
     background: rgba(255,255,255,.7);
@@ -107,11 +118,7 @@
                     }
                 }
             }
-            
-        
-
         }
-    
 }
 
 
@@ -127,10 +134,17 @@
         background-color: #3CB371;
         border: solid 1px black;
     }
-    .uncompleted{
+    .inProgress{
         padding: 0 5px;
         border-radius: 5px;
         background-color: #FF7F50
+        ;
+        border: solid 1px black;
+    }
+    .submitted{
+        padding: 0 5px;
+        border-radius: 5px;
+        background-color: rgb(112, 111, 111)
         ;
         border: solid 1px black;
     }
@@ -149,7 +163,11 @@
             background-color: #FF7F50;
         }
     }
+    .completedBTN{
+        display:none
+    }
 }
+
 
 
 

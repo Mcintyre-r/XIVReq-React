@@ -1,7 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Card from './cards'
 
-const cardContainer = (props) => {
+function CardContainer(props) {
+    const [claimDrop, setClaimDrop] = useState(false)
+    const [unclaimDrop, setUnclaimDrop] = useState(false)
+    let claimCount = 0
+    let unclaimCount = 0
+
+    props.requests.map(request => {
+        if(request.workerID === props.user.uuid && request.completed === false){
+            claimCount++
+        }else if(!request.workerID){
+            unclaimCount++
+        }
+    })
+
  return(
      <div className='rightContainer'>
         <div className='buttonContainer'>
@@ -11,14 +24,61 @@ const cardContainer = (props) => {
                         }
                         }>Logout</a>
         </div>
+        {props.user.crafter?
+        <div className='cardContainer'>
+            {claimCount===0? 
+            <div className='bar'>
+                <div>Claimed Requests:</div>
+                <div>You currently have no claimed requests</div>
+            </div>
+            :
+            <div className='bar'onClick={()=>setClaimDrop(!claimDrop)}>
+                <div>Claimed Requests:</div>
+                <div>{claimDrop?'click to minimize':'click to expand'}</div>
+            </div>
+            }  
+            <div className={claimDrop?'':'hidden'}>
+            {props.requests.map((request)=>{ 
+                console.log(request.workerID)
+                if(request.workerID === props.user.uuid && request.completed === false){
+
+                return <Card request={request} setRequests={props.setRequests} user={props.user} teamCraft={props.teamCraft} requestHandler={props.requestHandler} setTC={props.setTC}/>
+                }
+            })
+            }  
+            </div>  
+            {unclaimCount===0?
+            <div className='bar'>
+                <div>Unclaimed Requests:</div>
+                <div>There are currently no unclaimed requests</div>
+            </div>
+            :
+            <div className='bar'onClick={()=>setUnclaimDrop(!unclaimDrop)}>
+                <div>Unclaimed Requests:</div>
+                <div>{unclaimDrop?'click to minimize':'click to expand'}</div>
+            </div>
+            }  
+            <div className={unclaimDrop?'':'hidden'}>
+            {props.requests.map((request)=>{ 
+                if(!request.workerID ){
+                return <Card request={request} setRequests={props.setRequests} user={props.user} teamCraft={props.teamCraft} requestHandler={props.requestHandler} setTC={props.setTC}/>
+                }
+            })
+            }  
+            </div>  
+        </div>
+        :
         <div className='cardContainer'>
             {props.requests.map((request)=>{ 
-                return <Card request={request} teamCraft={props.teamCraft} setTC={props.setTC}/>
+                if(request.requesterId === props.user.uuid){
+                return <Card request={request} setRequests={props.setRequests} user={props.user} teamCraft={props.teamCraft} requestHandler={props.requestHandler} setTC={props.setTC}/>
+                }
             })
-            }    
+            }  
         </div>
+        }   
      </div>
  )
 }
 
-export default cardContainer;
+export default CardContainer;

@@ -1,3 +1,4 @@
+import Axios from 'axios'
 import React from 'react'
 
 
@@ -16,8 +17,10 @@ return(
                         <h6>{props.request.quantity} {props.request.quantity === 1 ? 'item' : 'items'}</h6>
                     </div>
                     <div className='Crafter'>
+                        Requester: {props.request.requestedBy}
+                    </div>
+                    <div className='Crafter'>
                         Crafter: {props.request.claimed? props.request.worker : 'unclaimed'}
-                        {props.request.claimed? <img src={`https://cdn.discordapp.com/avatars/${props.request.workerID}/${props.request.workerPicture}.png`} alt='worker'/>: <img src='https://www.iconpacks.net/icons/2/free-sad-face-icon-2691-thumb.png'/>}
                     </div>    
                 </div>           
                     
@@ -26,7 +29,10 @@ return(
             
 
             <div className='requestOptions'>
-                <div className={props.request.completed? 'completed' : 'uncompleted'}>{props.request.completed? 'Completed' : 'In Progress'}</div>
+                <div className={props.request.completed? 'completed' : props.request.workerID?'inProgress':'submitted'}>{
+                    props.request.completed?'Completed':    
+                        props.request.workerID?'In Progress':'Submitted' 
+                }</div>
                 {props.teamCraft.includes(props.request)?
                     <div className='btn selected' onClick={()=> {
                         const index = props.teamCraft.indexOf(props.request)
@@ -38,7 +44,27 @@ return(
                         props.setTC([...props.teamCraft, props.request])
                     }}>Select</div>
             }
-                <div className='btn'>{props.request.completed? 'Resolve': 'Delete'}</div>
+                {props.user.crafter && !props.request.workerID ? 
+                <div className='btn' onClick={()=>{
+                    Axios.put('http://localhost:5000/api/requests/claim', {user: props.user, requestId: props.request.id})
+                    .then(res => props.requestHandler(props.setRequests, props.user))
+                    .catch(err => console.log(err))
+                }}> Claim </div>
+                :null}
+                {props.user.uuid === props.request.workerID ? 
+                <div className={props.request.completed?'completedBTN':'btn'} onClick={()=>{
+                    Axios.put('http://localhost:5000/api/requests/complete', {user: props.user, request: props.request})
+                    .then(res => props.requestHandler(props.setRequests, props.user))
+                    .catch(err => console.log(err))
+                }}> Complete </div>
+                :null}
+                {props.user.uuid === props.request.requesterId?
+                <div className='btn' onClick={()=>{
+                    Axios.delete('http://localhost:5000/api/requests/resolve', { data:{request: props.request}})
+                    .then(res => props.requestHandler(props.setRequests, props.user))
+                    .catch(err => console.log(err))
+                }}>{props.request.completed? 'Resolve': 'Delete'}</div>
+                : null}
             </div>
         
         
