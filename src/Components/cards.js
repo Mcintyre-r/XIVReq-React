@@ -46,21 +46,21 @@ return(
             }
                 {props.user.crafter && !props.request.workerID ? 
                 <div className='btn' onClick={()=>{
-                    Axios.put('http://localhost:5000/api/requests/claim', {user: props.user, requestId: props.request.id})
+                    Axios.put('https://xivreq.herokuapp.com/api/requests/claim', {user: props.user, requestId: props.request.id})
                     .then(res => props.requestHandler(props.setRequests, props.user))
                     .catch(err => console.log(err))
                 }}> Claim </div>
                 :null}
                 {props.user.uuid === props.request.workerID ? 
                 <div className={props.request.completed?'completedBTN':'btn'} onClick={()=>{
-                    Axios.put('http://localhost:5000/api/requests/complete', {user: props.user, request: props.request})
+                    Axios.put('https://xivreq.herokuapp.com/api/requests/complete', {user: props.user, request: props.request})
                     .then(res => props.requestHandler(props.setRequests, props.user))
                     .catch(err => console.log(err))
                 }}> Complete </div>
                 :null}
                 {props.user.uuid === props.request.requesterId?
                 <div className='btn' onClick={()=>{
-                    Axios.delete('http://localhost:5000/api/requests/resolve', { data:{request: props.request}})
+                    Axios.delete('https://xivreq.herokuapp.com/api/requests/resolve', { data:{request: props.request}})
                     .then(res => props.requestHandler(props.setRequests, props.user))
                     .catch(err => console.log(err))
                 }}>{props.request.completed? 'Resolve': 'Delete'}</div>
