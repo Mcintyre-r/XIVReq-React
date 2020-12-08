@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import Card from './cards'
 
 function CardContainer(props) {
-    const [claimDrop, setClaimDrop] = useState(false)
-    const [unclaimDrop, setUnclaimDrop] = useState(false)
+    const [claimDrop, setClaimDrop] = useState(true)
+    const [unclaimDrop, setUnclaimDrop] = useState(true)
     let claimCount = 0
     let unclaimCount = 0
 
