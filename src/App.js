@@ -30,8 +30,6 @@ import userLogin from './Utility/userLogin'
 
     },[crystal_01, crystal_02, crystal_03])
 
-
-
   return (
     <div className="container">
       <div className="wrapper fade_in_left">
