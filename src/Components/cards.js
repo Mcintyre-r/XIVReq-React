@@ -1,12 +1,13 @@
 import Axios from 'axios'
-import React from 'react'
+import React, {useState} from 'react'
 
 
-const cards = (props) => {
-
+function Cards (props){
+    const [setView, setSetView] = useState(false)
+    console.log(props.request.setItems)
 return(
     <div className=' itemCard'>
-
+        <div className='itemContainer'>
             <div className='topCardContainer'>
                 <img src={props.request.itemIcon}  className='itemIcon' alt='item icon'/>
                 <div className='requestDescrip'>
@@ -66,7 +67,88 @@ return(
                 }}>{props.request.completed? 'Resolve': 'Delete'}</div>
                 : null}
             </div>
-        
+        </div>
+            { props.request.set ?
+                <div>
+                    { setView? 
+                        <>
+                        <div className='drop' onClick={()=> setSetView(false)}> <i class="arrow up"/> Click to Minimize <i class="arrow up"/> </div>
+                        <div className='setContainer'> 
+                            
+                            <div className='leftSet'>
+                                <div className='itemInfo'>
+                                    <img src={props.request.setItems.wpnIcon} alt='weapon'/>
+                                    <h6>{props.request.setItems.wpnName}</h6>
+                                </div>
+                                <div className='itemInfo'>
+                                    <img src={props.request.setItems.headIcon} alt='head'/>
+                                    <h6>{props.request.setItems.headName}</h6>
+                                </div>
+                                <div className='itemInfo'>
+                                    <img src={props.request.setItems.chestIcon} alt='chest'/>
+                                    <h6>{props.request.setItems.chestName}</h6>
+                                </div>
+                                <div className='itemInfo'>
+                                    <img src={props.request.setItems.handsIcon} alt='hands'/>
+                                    <h6>{props.request.setItems.handsName}</h6>
+                                </div>
+                                <div className='itemInfo'>
+                                    <img src={props.request.setItems.legsIcon} alt='legs'/>
+                                    <h6>{props.request.setItems.legsName}</h6>
+                                </div>
+                                <div className='itemInfo'>
+                                    <img src={props.request.setItems.feetIcon} alt='feet' />
+                                    <h6>{props.request.setItems.feetName}</h6>
+                                </div>
+                                <div className='itemInfo'>
+                                    <img src={props.request.setItems.beltIcon} alt='belt'/>
+                                    <h6>{props.request.setItems.beltName}</h6>
+                                </div>
+                            </div>
+                            <div className='rightSet'>
+                                {
+                                    props.request.setItems.shdName ? 
+                                    <div className='itemInfo'>
+                                    <h6>{props.request.setItems.shdName}</h6>
+                                    <img src={props.request.setItems.shdIcon} alt='shield'/>
+                                </div>
+                                :null
+                                }
+                                <div className='itemInfo'>
+                                    <h6>{props.request.setItems.earName}</h6>
+                                    <img src={props.request.setItems.earIcon} alt='earrings' />
+                                </div>
+                                <div className='itemInfo'>                                  
+                                    <h6>{props.request.setItems.neckName}</h6>
+                                    <img src={props.request.setItems.neckIcon} alt='necklace'/>
+                                </div>
+                                <div className='itemInfo'>
+                                    <h6>{props.request.setItems.wristName}</h6>
+                                    <img src={props.request.setItems.wristIcon} alt='bracelet'/>
+                                </div>
+                                <div className='itemInfo'>
+                                    <h6>{props.request.setItems.ringName}</h6>
+                                    <img src={props.request.setItems.ringIcon} alt='ring'/>
+                                </div>
+                                <div className='itemInfo'>
+                                    <h6>{props.request.setItems.ringName}</h6>
+                                    <img src={props.request.setItems.ringIcon} alt='ring'/>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        
+                        </div>
+                        </>
+                        :
+                        <div  className='drop' onClick={()=> setSetView(true)}> <i class="arrow down"/> Click to Expand <i class="arrow down"/></div>
+                    }
+                </div>
+            :
+            null
+            }
         
       
     </div>
@@ -74,4 +156,4 @@ return(
 
 }
 
-export default cards;
+export default Cards;

@@ -1,6 +1,23 @@
 
-
-
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+.drop{
+    padding-top: 5px;
+    text-align:center;
+    align-items: center;
+}
 .rightContainer{
     right: 25px;
     width: 700px;
@@ -81,9 +98,8 @@
     background: rgba(255,255,255,.7);
     margin: 5px 5px 5px auto;
     padding: 10px;
-    width: 70%;
+    width: 80%;
     border-radius: 20px;
-    display:flex;  
     @media(max-width: 500px){
         margin: 0;
         padding: 10px 0;
@@ -91,6 +107,8 @@
         border-radius: 0;
         border-bottom: 1px solid black;
     }
+    .itemContainer{
+        display:flex;  
         .topCardContainer{
             width: 80%;
             display: flex;
@@ -119,6 +137,38 @@
                 }
             }
         }
+    }
+    .setContainer{
+        display: flex  ;
+        justify-content: space-between;
+        margin: 10px auto;
+        .leftSet{
+            border-right: 1px black solid;
+        }
+        .leftSet, .rightSet{
+            width: 50%;
+            padding: 0 5px;
+            .itemInfo{
+                display: flex;
+                align-items: center;
+                padding-top: 5px;
+                h6{
+                    padding-left: 7px;
+                }
+            }
+        }
+        .rightSet{
+            .itemInfo{    
+                justify-content: flex-end;
+                h6{
+                    padding-right:7px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+ 
+
 }
 
 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Card from './cards'
+import Cards from './cards'
 
 function CardContainer(props) {
     const [claimDrop, setClaimDrop] = useState(true)
@@ -39,10 +39,9 @@ function CardContainer(props) {
             }  
             <div className={claimDrop?'':'hidden'}>
             {props.requests.map((request)=>{ 
-                console.log(request.workerID)
                 if(request.workerID === props.user.uuid && request.completed === false){
 
-                return <Card request={request} setRequests={props.setRequests} user={props.user} teamCraft={props.teamCraft} requestHandler={props.requestHandler} setTC={props.setTC}/>
+                return <Cards request={request} setRequests={props.setRequests} user={props.user} teamCraft={props.teamCraft} requestHandler={props.requestHandler} setTC={props.setTC}/>
                 }
             })
             }  
@@ -61,7 +60,7 @@ function CardContainer(props) {
             <div className={unclaimDrop?'':'hidden'}>
             {props.requests.map((request)=>{ 
                 if(!request.workerID ){
-                return <Card request={request} setRequests={props.setRequests} user={props.user} teamCraft={props.teamCraft} requestHandler={props.requestHandler} setTC={props.setTC}/>
+                return <Cards request={request} setRequests={props.setRequests} user={props.user} teamCraft={props.teamCraft} requestHandler={props.requestHandler} setTC={props.setTC}/>
                 }
             })
             }  
@@ -71,7 +70,7 @@ function CardContainer(props) {
         <div className='cardContainer'>
             {props.requests.map((request)=>{ 
                 if(request.requesterId === props.user.uuid){
-                return <Card request={request} setRequests={props.setRequests} user={props.user} teamCraft={props.teamCraft} requestHandler={props.requestHandler} setTC={props.setTC}/>
+                return <Cards request={request} setRequests={props.setRequests} user={props.user} teamCraft={props.teamCraft} requestHandler={props.requestHandler} setTC={props.setTC}/>
                 }
             })
             }  
