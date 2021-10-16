@@ -11,8 +11,8 @@ const videoOptions = {
       showinfo: 0,
       modestbranding: 1,
       disablekb: 1,
-      start: 148,
-      end: 158,
+      start: 327,
+      end: 347,
     }
   };
 
