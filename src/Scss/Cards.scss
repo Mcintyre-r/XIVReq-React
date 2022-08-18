@@ -42,11 +42,8 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 30px;
-    padding: 4px 10px;
-    @media(max-width: 500px){
-        padding: 10px 10px;
-    }
     .exportBtn{
+        padding: 4px 10px;
         text-decoration: none;
         text-align: center;
 
