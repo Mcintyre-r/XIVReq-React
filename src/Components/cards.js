@@ -95,7 +95,7 @@ return(
                                 {props.request.GlovesIcon?
                                 <div className='itemInfo'>
                                     <img src={`https://xivapi.com${props.request.GlovesIcon}`} alt='Gloves'/>
-                                    <h6>{props.request.GlovessName}</h6>
+                                    <h6>{props.request.GlovesName}</h6>
                                 </div>
                                 :null}
                                 
