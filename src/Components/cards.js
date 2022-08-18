@@ -14,7 +14,7 @@ return(
                         <h6>{props.request.item}</h6>
                     </div>
                     <div className='Crafter'>
-                        Requester: {props.request.requestedBy}
+                        Requester: {props.request.requestedBy+'#'+props.request.requesterDiscriminator}
                     </div>
                     <div className='Crafter'>
                         Crafter: {props.request.claimed? props.request.worker : 'unclaimed'}
