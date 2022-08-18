@@ -1,23 +1,23 @@
 const exportHandler = (list) => {
     let importString = ''
     for(const request of list){
-      if(!request.set){
-        const ID = request.itemID.toString();
-        const quantity = request.quantity.toString();
-        const addition = `${ID},null,${quantity};`
-        importString = importString+addition
-      } else if(request.set){
-        const i = request.setItems
-        console.log(i)
-        const importSetup = `${i.wpnID},null,1;${i.headID},null,1;${i.chestID},null,1;${i.handsID},null,1;${i.legsID},null,1;${i.feetID},null,1;${i.beltID},null,1;${i.earID},null,1;${i.neckID},null,1;${i.wristID},null,1;${i.ringID},null,2;`
-        console.log(importSetup)
+        const mainHand = request.MainHandID? `${request.MainHandID},null,1;` : ''
+        const offHand = request.OffHandID? `${request.OffHandID},null,1;` : ''
+        const head = request.HeadID?`${request.HeadID},null,1;`:''
+        const body = request.BodyID?`${request.BodyID},null,1;`:''
+        const gloves = request.GlovesID?`${request.GlovesID},null,1;`:''
+        const legs = request.LegsID?`${request.LegsID},null,1;`:''
+        const feet = request.FeetID?`${request.FeetID},null,1;`:''
+        const ears = request.EarsID?`${request.EarsID},null,1;`:''
+        const neck = request.NeckID?`${request.NeckID},null,1;`:''
+        const wrist = request.WristsID?`${request.WristID},null,1;`:''
+        const fingerL = request.FingerLID?`${request.FingerLID},null,1;`:''
+        const fingerR = request.FingerRID?`${request.FingerRID},null,1;`:''
+        const importSetup = mainHand+offHand+head+body+gloves+legs+feet+ears+neck+wrist+fingerL+fingerR
+        
         importString = importString+importSetup
-        if(i.shdID){
-          importString = importString+`${i.shdID},null,1;`
-        }
-        console.log(importString)
-      
-      }
+
+        
 
     }
     const base64String = btoa(importString.slice(0,-1))

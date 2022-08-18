@@ -11,8 +11,8 @@ const videoOptions = {
       showinfo: 0,
       modestbranding: 1,
       disablekb: 1,
-      start: 327,
-      end: 347,
+      start: 172,
+      end: 184,
     }
   };
 
@@ -21,7 +21,7 @@ const backgroundVideo = (props) =>{
     <div className="video-background">
         <div className="video-foreground">
             <YouTube
-            videoId="zTTtd6bnhFs"
+            videoId="aK9T8jBmebc"
             opts={videoOptions}
             className="video-iframe"
             onReady={(event)=> event.target.mute()}
