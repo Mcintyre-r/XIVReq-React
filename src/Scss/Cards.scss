@@ -42,10 +42,14 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 30px;
+    padding: 4px 10px;
+    @media(max-width: 500px){
+        padding: 10px 10px;
+    }
     .exportBtn{
         text-decoration: none;
         text-align: center;
-        padding: 4px 10px;
+
         color: black;
         margin-top:20px;
         margin-left: 4.5%;
@@ -61,6 +65,7 @@
             color:white;
             background-color: black;
         }
+
     }
     .disabled{
     
@@ -211,6 +216,9 @@
         }
         &.selected{
             background-color: #FF7F50;
+        }
+        @media(max-width: 500px){
+            padding: 10px 10px;
         }
     }
     .completedBTN{
