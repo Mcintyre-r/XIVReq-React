@@ -1,4 +1,4 @@
-const exportHandler = (list) => {
+const exportHandler = (list,tcState) => {
     let importString = ''
     for(const request of list){
         const mainHand = request.MainHandID? `${request.MainHandID},null,1;` : ''
@@ -22,6 +22,7 @@ const exportHandler = (list) => {
     }
     const base64String = btoa(importString.slice(0,-1))
     window.open(`https://ffxivteamcraft.com/import/${base64String}`)
+    tcState([])
   }
 
 

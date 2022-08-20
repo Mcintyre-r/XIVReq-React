@@ -20,8 +20,6 @@ return(
                         Crafter: {props.request.claimed? props.request.worker : 'unclaimed'}
                     </div>    
                 </div>           
-                    
-                
             </div>
             
 
