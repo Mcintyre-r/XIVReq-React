@@ -19,7 +19,10 @@ function CardContainer(props) {
      <div className='rightContainer'>
         <div className='buttonContainer'>
         <div className={props.teamCraft.length?'exportBtn':'exportBtn disabled'} onClick={ ()=> { props.setTC([])}}> Deselect All </div>
-            <div className={props.teamCraft.length?'exportBtn':'exportBtn disabled'} onClick={ ()=> { props.exportHandler(props.teamCraft,props.setTC)}}> Export </div>
+            <div className={props.teamCraft.length?'exportBtn':'exportBtn disabled'} onClick={ ()=> { 
+                props.exportHandler(props.teamCraft) 
+                props.setTC([])}
+                }> Export </div>
             <a className='exportBtn' href='https://xivreq.com' onClick={()=> { 
                             localStorage.removeItem('xivReqUser');
                         }
