@@ -10,7 +10,7 @@ const exportHandler = (list) => {
         const feet = request.FeetID?`${request.FeetID},null,1;`:''
         const ears = request.EarsID?`${request.EarsID},null,1;`:''
         const neck = request.NeckID?`${request.NeckID},null,1;`:''
-        const wrist = request.WristsID?`${request.WristID},null,1;`:''
+        const wrist = request.WristsID?`${request.WristsID},null,1;`:''
         const fingerL = request.FingerLID?`${request.FingerLID},null,1;`:''
         const fingerR = request.FingerRID?`${request.FingerRID},null,1;`:''
         const importSetup = mainHand+offHand+head+body+gloves+legs+feet+ears+neck+wrist+fingerL+fingerR
