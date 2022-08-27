@@ -10,8 +10,16 @@ return(
             <div className='topCardContainer'>
                 <img src={`https://cdn.discordapp.com/avatars/${props.request.requesterId}/${props.request.requesterPicture}.png`}  className='itemIcon' alt='item icon'/>
                 <div className='requestDescrip'>
+                    
                     <div className='itemName'>
-                        <h6>{props.request.item}</h6>
+                    {props.request.quantity?
+                        <h6>{props.request.potName}</h6>
+                    :<></>}
+                    </div>
+                    <div className='quantity'>
+                    {props.request.quantity?
+                        <h6>{props.request.quantity}</h6>
+                    :<></>}
                     </div>
                     <div className='Crafter'>
                         Requester: {props.request.requestedBy+'#'+props.request.requesterDiscriminator}
@@ -41,27 +49,32 @@ return(
             }
                 {props.user.crafter && !props.request.workerID ? 
                 <div className='btn' onClick={()=>{
-                    Axios.put('https://xivreq.herokuapp.com/api/requests/claim', {user: props.user, requestId: props.request.id})
+                    Axios.put(`${process.env.REACT_APP_REQUEST}/api/requests/claim`, {user: props.user, requestId: props.request.id, request: props.request})
                     .then(res => props.requestHandler(props.setRequests, props.user))
                     .catch(err => console.log(err))
                 }}> Claim </div>
                 :null}
                 {props.user.uuid === props.request.workerID ? 
                 <div className={props.request.completed?'completedBTN':'btn'} onClick={()=>{
-                    Axios.put('https://xivreq.herokuapp.com/api/requests/complete', {user: props.user, request: props.request})
+                    Axios.put(`${process.env.REACT_APP_REQUEST}/api/requests/complete`, {user: props.user, request: props.request})
                     .then(res => props.requestHandler(props.setRequests, props.user))
                     .catch(err => console.log(err))
                 }}> Complete </div>
                 :null}
                 {props.user.uuid === props.request.requesterId?
                 <div className='btn' onClick={()=>{
-                    Axios.delete('https://xivreq.herokuapp.com/api/requests/resolve', { data:{request: props.request}})
+                    Axios.delete(`${process.env.REACT_APP_REQUEST}/api/requests/resolve`, { data:{request: props.request}})
                     .then(res => props.requestHandler(props.setRequests, props.user))
                     .catch(err => console.log(err))
                 }}>{props.request.completed? 'Resolve': 'Delete'}</div>
                 : null}
             </div>
         </div>
+        <div>
+            {props.request.quantity?
+                        <></>
+                        :
+
                 <div>
                     { setView? 
                         <>
@@ -166,6 +179,9 @@ return(
                         <div  className='drop' onClick={()=> setSetView(true)}> <i class="arrow down"/> Click to Expand <i class="arrow down"/></div>
                     }
                 </div>
+                
+            }
+        </div>
     </div>
 )
 

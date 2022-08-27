@@ -6,7 +6,7 @@ const requestHandler =  (setFunc, user) => {
     if(user){
       query = `?id=${user.uuid}`
     }
-    Axios.get(`https://xivreq.herokuapp.com/api/requests/${user.crafter?'':query}`).then( res => {
+    Axios.get(`${process.env.REACT_APP_REQUEST}/api/requests/${user.crafter?'':query}`).then( res => {
       const requests = res.data.Requests
       requests.sort( (a, b) => {
         return a.completed - b.completed
