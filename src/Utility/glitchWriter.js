@@ -7,7 +7,7 @@ const glitchWriter = async (element) => {
     let index = 0
     const messages = ["Thank you for using XIV Req", "Submit any feedback via the bot.", "Beta Version 0.2"]
     await wait(3000)
-    displayWriter.write("Beta Version 0.2", {})
+    displayWriter.write("Beta Version 0.3", {})
     while(0 != 1){
       await wait(18000)
       displayWriter.write(messages[index], {})
