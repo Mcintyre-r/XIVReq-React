@@ -10,7 +10,7 @@ const userLogin = (oAuth, setLogin, setUser, user) => {
     }
     else if(oAuth){
         const uuid = oAuth.split('=')[1]
-        Axios.get(`${process.env.REACT_APP_USER}/api/user/`, { params: {'uuid': uuid}})
+        Axios.get(`${process.env.REACT_APP_BASEURL}/api/user/`, { params: {'uuid': uuid}})
             .then( res => {
                 if(!res.data) return null
                 localStorage.setItem('xivReqUser', JSON.stringify(res.data))

@@ -23,7 +23,7 @@ function CardContainer(props) {
                 props.exportHandler(props.teamCraft) 
                 props.setTC([])}
                 }> Export </div>
-            <a className='exportBtn' href={process.env.REACT_APP_LOGOUT} onClick={()=> { 
+            <a className='exportBtn' href={process.env.REACT_APP_BASEURL} onClick={()=> { 
                             localStorage.removeItem('xivReqUser');
                         }
                         }>Logout</a>

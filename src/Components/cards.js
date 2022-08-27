@@ -49,21 +49,21 @@ return(
             }
                 {props.user.crafter && !props.request.workerID ? 
                 <div className='btn' onClick={()=>{
-                    Axios.put(`${process.env.REACT_APP_REQUEST}/api/requests/claim`, {user: props.user, requestId: props.request.id, request: props.request})
+                    Axios.put(`${process.env.REACT_APP_BASEURL}/api/requests/claim`, {user: props.user, requestId: props.request.id, request: props.request})
                     .then(res => props.requestHandler(props.setRequests, props.user))
                     .catch(err => console.log(err))
                 }}> Claim </div>
                 :null}
                 {props.user.uuid === props.request.workerID ? 
                 <div className={props.request.completed?'completedBTN':'btn'} onClick={()=>{
-                    Axios.put(`${process.env.REACT_APP_REQUEST}/api/requests/complete`, {user: props.user, request: props.request})
+                    Axios.put(`${process.env.REACT_APP_BASEURL}/api/requests/complete`, {user: props.user, request: props.request})
                     .then(res => props.requestHandler(props.setRequests, props.user))
                     .catch(err => console.log(err))
                 }}> Complete </div>
                 :null}
                 {props.user.uuid === props.request.requesterId?
                 <div className='btn' onClick={()=>{
-                    Axios.delete(`${process.env.REACT_APP_REQUEST}/api/requests/resolve`, { data:{request: props.request}})
+                    Axios.delete(`${process.env.REACT_APP_BASEURL}/api/requests/resolve`, { data:{request: props.request}})
                     .then(res => props.requestHandler(props.setRequests, props.user))
                     .catch(err => console.log(err))
                 }}>{props.request.completed? 'Resolve': 'Delete'}</div>

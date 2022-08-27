@@ -38,7 +38,7 @@ import userLogin from './Utility/userLogin'
         { login ? 
         <User  userName={user.username.length>7? user.username.slice(0,6)+'~'+'#'+user.discriminator: user.username+'#'+user.discriminator} userAvatar={`https://cdn.discordapp.com/avatars/${user.uuid}/${user.avatar}.png`}/>
         :
-        <a  href={`${process.env.REACT_APP_LOGIN}/api/auth/login`} className='btn'>Discord Login</a>    
+        <a  href={`${process.env.REACT_APP_BASEURL}/api/auth/login`} className='btn'>Discord Login</a>    
         }
       </div>
       {user? <CardContainer setLogin={setLogin} user={user} setUser={setUser} requests={requests} setRequests={setRequests} requestHandler={requestHandler} exportHandler={exportHandler} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}
