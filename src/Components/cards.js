@@ -18,7 +18,7 @@ return(
                     </div>
                     <div className='quantity'>
                     {props.request.quantity?
-                        <h6>Quantity:{props.request.quantity}</h6>
+                        <h6>Quantity: {props.request.quantity}</h6>
                     :<></>}
                     </div>
                     <div className='Crafter'>
