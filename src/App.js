@@ -29,6 +29,7 @@ import userLogin from './Utility/userLogin'
       requestHandler(setRequests, user)
 
     },[crystal_01, crystal_02, crystal_03])
+    console.log(user)
 
   return (
     <div className="container">
