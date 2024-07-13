@@ -37,7 +37,7 @@ import userLogin from './Utility/userLogin'
         <img src={logo} className="logo" alt='FFXIV REQUISITION logo'/>
         <h1 ref={glitch} className="glitch" alt='subtitle'> </h1> 
         { login ? 
-        <User  userName={user.username.length>7? user.username.slice(0,6)+'~'+'#'+user.discriminator: user.username+'#'+user.discriminator} userAvatar={`https://cdn.discordapp.com/avatars/${user.uuid}/${user.avatar}.png`}/>
+        <User  userName={user.username} userAvatar={`https://cdn.discordapp.com/avatars/${user.uuid}/${user.avatar}.png`}/>
         :
         <a  href={`${process.env.REACT_APP_BASEAPIURL}/api/auth/login`} className='btn'>Discord Login</a>    
         }
