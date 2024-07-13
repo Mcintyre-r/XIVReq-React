@@ -23,7 +23,7 @@ import userLogin from './Utility/userLogin'
       glitchWriter(glitch.current)
       const fetchData = async () => {
        await userLogin(window.location.search, setLogin, setUser, user)
-       await requestHandler(setRequests, user))
+       await requestHandler(setRequests, user)
       }
      fetchData()
     },[])
