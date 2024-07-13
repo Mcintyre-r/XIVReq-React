@@ -22,7 +22,7 @@ return(
                     :<></>}
                     </div>
                     <div className='Crafter'>
-                        Requester: props.request.requestedBy
+                        Requester: {props.request.requestedBy}
                     </div>
                     <div className='Crafter'>
                         Crafter: {props.request.claimed? props.request.worker : 'unclaimed'}
