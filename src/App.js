@@ -1,5 +1,4 @@
 import React, { useEffect, useState,useRef} from 'react';
-import scrollCrystal from './Utility/scrollCrystal.js';
 import glitchWriter from './Utility/glitchWriter.js';
 import requestHandler from './Utility/requestHandler.js';
 import exportHandler from './Utility/exportHandler.js';
@@ -40,7 +39,6 @@ import userLogin from './Utility/userLogin'
         }
       </div>
       {user? <CardContainer setLogin={setLogin} user={user} setUser={setUser} requests={requests} setRequests={setRequests} requestHandler={requestHandler} exportHandler={exportHandler} teamCraft={teamCraft} setTC={setTeamCraft}/> : null}
-      <Crystal crystals={[setCrystal_01,setCrystal_02,setCrystal_03]}/>
 
       <div className="leftShape"/>
       {user? <div className="rightShape"/> : null}
