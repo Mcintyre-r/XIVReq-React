@@ -18,7 +18,8 @@ function CardContainer(props) {
  return(
      <div className='rightContainer'>
         <div className='buttonContainer'>
-        <div className={props.teamCraft.length?'exportBtn':'exportBtn disabled'} onClick={ ()=> { props.setTC([])}}> Deselect All </div>
+            <div className={'exportBtn'} onClick={ ()=> { props.requestHandler(props.setRequests, props.user)}}> Refresh </div>
+            <div className={props.teamCraft.length?'exportBtn':'exportBtn disabled'} onClick={ ()=> { props.setTC([])}}> Deselect All </div>
             <div className={props.teamCraft.length?'exportBtn':'exportBtn disabled'} onClick={ ()=> { 
                 props.exportHandler(props.teamCraft) 
                 props.setTC([])}
