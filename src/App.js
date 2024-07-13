@@ -21,9 +21,11 @@ import userLogin from './Utility/userLogin'
 
     useEffect(() => {
       glitchWriter(glitch.current)
-      userLogin(window.location.search, setLogin, setUser, user)
-      requestHandler(setRequests, user)
-
+      const fetchData = async () => {
+       await userLogin(window.location.search, setLogin, setUser, user)
+       await requestHandler(setRequests, user))
+      }
+     fetchData()
     },[])
     console.log(user)
 
