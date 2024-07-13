@@ -3,6 +3,7 @@ import Axios from 'axios'
 
 const requestHandler =  (setFunc, user) => {
   let query = ''
+    console.log(user)
     if(user){
       query = `?id=${user.uuid}`
     }
