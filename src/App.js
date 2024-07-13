@@ -24,7 +24,7 @@ import userLogin from './Utility/userLogin'
       userLogin(window.location.search, setLogin, setUser, user)
       requestHandler(setRequests, user)
 
-    },[requests])
+    },[])
     console.log(user)
 
   return (
