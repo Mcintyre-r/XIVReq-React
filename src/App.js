@@ -17,18 +17,15 @@ import userLogin from './Utility/userLogin'
     const [user, setUser] = useState(localStorage.getItem('xivReqUser')||'')
     const [requests, setRequests] = useState([])
     const glitch = useRef()
-    const [crystal_01, setCrystal_01] = useState()
-    const [crystal_02, setCrystal_02] = useState()
-    const [crystal_03, setCrystal_03] = useState()
+
     const [teamCraft, setTeamCraft] = useState([])
 
     useEffect(() => {
       glitchWriter(glitch.current)
-      scrollCrystal(crystal_01,crystal_02,crystal_03)
       userLogin(window.location.search, setLogin, setUser, user)
       requestHandler(setRequests, user)
 
-    },[crystal_01, crystal_02, crystal_03])
+    },[requests])
     console.log(user)
 
   return (
