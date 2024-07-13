@@ -8,7 +8,7 @@ return(
     <div className=' itemCard'>
         <div className='itemContainer'>
             <div className='topCardContainer'>
-                <img src={`https://cdn.discordapp.com/avatars/${props.request.requesterId}/${props.request.requesterPicture}.png`}  className='itemIcon' alt='item icon'/>
+                <img src={`https://cdn.discordapp.com/avatars/${props.request.requesterId}/${props.request.requesterPicture}.png`}  className='cardAvatar' alt='item icon'/>
                 <div className='requestDescrip'>
                     
                     <div className='itemName'>
