@@ -7,6 +7,7 @@ const requestHandler =  (setFunc, user) => {
     if(user){
       query = `?id=${user.uuid}`
       console.log("query check:", query)
+      console.log("user id check:", user.uuid)
     }
     Axios.get(`${process.env.REACT_APP_BASEAPIURL}/api/requests/${user.crafter?'':query}`).then( res => {
       const requests = res.data.Requests
