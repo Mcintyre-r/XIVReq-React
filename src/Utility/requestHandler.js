@@ -12,6 +12,7 @@ const requestHandler =  (setFunc, user) => {
       requests.sort( (a, b) => {
         return a.completed - b.completed
       })
+      console.log(requests)
       setFunc(requests)
     })
   }
