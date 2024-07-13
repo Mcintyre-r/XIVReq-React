@@ -5,9 +5,9 @@ const wait = time => new Promise(resolve => setTimeout(resolve, time))
 const glitchWriter = async (element) => {
     const displayWriter = setGlitchedWriter(element, {})
     let index = 0
-    const messages = ["Thank you for using XIV Req", "Submit any feedback via the bot.", "Beta Version 0.4"]
+    const messages = ["Thank you for using XIV Req", "Submit any feedback via the bot.", "Beta Version 0.5"]
     await wait(3000)
-    displayWriter.write("Beta Version 0.4", {})
+    displayWriter.write("Beta Version 0.5", {})
     while(0 != 1){
       await wait(18000)
       displayWriter.write(messages[index], {})
