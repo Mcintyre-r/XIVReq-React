@@ -21,8 +21,9 @@ import userLogin from './Utility/userLogin'
 
     useEffect(() => {
       glitchWriter(glitch.current)
-      userLogin(window.location.search, setLogin, setUser, user)
+      userLogin(window.location.search, setLogin, setUser, user).then( res =>
       requestHandler(setRequests, user)
+      ).catch(err => console.log(err))
     },[])
     console.log(user)
 
